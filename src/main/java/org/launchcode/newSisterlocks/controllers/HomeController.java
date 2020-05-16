@@ -29,7 +29,7 @@ public class HomeController {
         columnChoices.put("traineeOrConsultant", "Trainee or Consultant");
 
         tableChoices.put("all", "View All");
-        tableChoices.put("employer", JobData.getAllEmployers());
+        tableChoices.put("employer", ConsultantData.getAllEmployers());
         tableChoices.put("location", JobData.getAllLocations());
         tableChoices.put("positionType", JobData.getAllPositionTypes());
         tableChoices.put("coreCompetency", JobData.getAllCoreCompetency());
