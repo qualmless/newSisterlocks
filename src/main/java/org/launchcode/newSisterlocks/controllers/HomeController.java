@@ -17,7 +17,7 @@ public class HomeController {
 
     public ListController () {
         columnChoices.put("all", "All");
-        columnChoices.put("consultant", "Consultant");
+        columnChoices.put("name", "Consultant Name");
         columnChoices.put("address", "Address");
         columnChoices.put("city", "City");
         columnChoices.put("state", "State");

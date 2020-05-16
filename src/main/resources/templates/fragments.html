@@ -24,17 +24,30 @@
             </div>
         </div>
     </div>
-
+    columnChoices.put("address", "Address");
+    columnChoices.put("city", "City");
+    columnChoices.put("state", "State");
+    columnChoices.put("zip", "Zip");
+    columnChoices.put("phoneNumber", "Phone Number");
+    columnChoices.put("email", "Email");
+    columnChoices.put("salonOrHome", "Salon or Home");
+    columnChoices.put("salonName", "Salon Name");
+    columnChoices.put("", "Trainee or Consultant");
 
     <table th:fragment="list-consultants-loop" class="consultant-listing" >
         <tr th:each="consultant : ${consultants}">
             <td th:utext="
             'ID: ' + ${consultant.id} + '<br>'+
             'Name: ' + ${consultant.name} + '<br>'+
-            'Employer: ' + ${consultant.employer} + '<br>'+
-            'Location: ' + ${consultant.location} + '<br>'+
-            'Position Type: ' + ${consultant.positionType} + '<br>'+
-            'Core Competency: ' + ${consultant.coreCompetency} + '<br>'"></td>
+            'Phone Number: ' + ${consultant.phoneNumber} + '<br>'+
+            'Email: ' + ${consultant.email} + '<br>'+
+            'Address: ' + ${consultant.address} + '<br>'+
+            'City: ' + ${consultant.city} + '<br>'+
+            'State: ' + ${consultant.state} + '<br>'+
+            'Zip: ' + ${consultant.zip} + '<br>'+
+            'Trainee or Consultant: ' + ${consultant.traineeOrConsultant} + '<br>'+
+            'Salon or Home: ' + ${consultant.salonOrHome} + '<br>'+
+            'Salon Name (if applicable): ' + ${consultant.salonName} + '<br>'"></td>
         </tr>
 
     </table>
