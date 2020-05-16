@@ -23,19 +23,20 @@ public class SearchController {
 
     @PostMapping(value = "results")
     public String displaySearchResults(Model model,
-                                       @RequestParam String searchTerm,
+                                       @RequestParam String zipCode,
                                        @RequestParam String searchType){
         model.addAttribute("columns", columnChoices);
         ArrayList<Consultant> consultants;
-        if (searchTerm.toLowerCase().equals("all") || searchTerm.toLowerCase().equals("")) {
-            consultants=ConsultantData.findAll();
-            model.addAttribute("title", "All Consultants");
-        }
-        else {
-            consultants = ConsultantData.findByColumnAndValue(searchType, searchTerm);
-            model.addAttribute("title", "Consultants with " + columnChoices.get(searchType) + ": " + searchTerm);
 
-        }
+//        if (searchTerm.toLowerCase().equals("all") || searchTerm.toLowerCase().equals("")) {
+//            consultants=ConsultantData.findAll();
+//            model.addAttribute("title", "All Consultants");
+//        }
+//        else {
+            consultants = ConsultantData.findByColumnAndValue(radius, zipCode);
+            model.addAttribute("title", "Consultants within " + columnChoices.get(radius) + " of Zip Code: " + zipCode);
+
+//        }
         model.addAttribute("consultants", consultants);
         return "search";
     }

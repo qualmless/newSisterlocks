@@ -33,22 +33,48 @@
     <form th:action="@{/search/results}" method = "post">
         <h2>Search by:</h2>
 
-        <p>
-            <span th:each="column : ${columns}">
-                <input
-                        type="radio"
-                        name="searchType"
-                        th:id="${column.key}"
-                        th:value="${column.key}"
-                        th:checked="${column.key == 'all'}"/>
-                <label th:for="${column.key}" th:text="${column.value}"></label>
-            </span>
+<!--        <p>-->
+<!--            <span th:each="column : ${columns}">-->
+<!--                <input-->
+<!--                        type="radio"-->
+<!--                        name="searchType"-->
+<!--                        th:id="${column.key}"-->
+<!--                        th:value="${column.key}"-->
+<!--                        th:checked="${column.key == 'all'}"/>-->
+<!--                <label th:for="${column.key}" th:text="${column.value}"></label>-->
+<!--            </span>-->
+<!--        </p>-->
 
-        </p>
-
         <p>
-            <label for="searchTerm">Keyword:</label>
-            <input type="text" name="searchTerm" id="searchTerm" />
+            <label for="consultant">Consultant</label>
+            <input type="checkbox"
+                   name="consultant"
+                   id="consultant"
+                   value="consultant"/>
+
+            <label for="trainee">Trainee</label>
+            <input type="checkbox"
+                   name="trainee"
+                   id="trainee"
+                   value="trainee"/>
+
+            <label for="salonOnly">Salon Only</label>
+            <input type="checkbox"
+                   name="salonOnly"
+                   id="salonOnly"
+                   value="salonOnly"/>
+
+            <label for="zipCode">Zip Code:</label>
+            <input type="text" name="zipCode" id="zipCode" />
+            <label for="radius">Radius: </label>
+            <select id = "radius">
+                <option value = "5">5 miles</option>
+                <option value = "10">10 miles</option>
+                <option value = "20">20 miles</option>
+                <option value = "50">50 miles</option>
+                <option value = "100">100 miles</option>
+                <option value = "any">Any distance</option>
+            </select>
         </p>
 
         <input type="submit" value="Search" />
