@@ -1,5 +1,6 @@
 package org.launchcode.newSisterlocks.controllers;
 
+
 import org.launchcode.newSisterlocks.models.Consultant;
 import org.launchcode.newSisterlocks.models.ConsultantData;
 import org.springframework.stereotype.Controller;
@@ -30,10 +31,10 @@ public class HomeController {
         columnChoices.put("traineeOrConsultant", "Trainee or Consultant");
 
         tableChoices.put("all", "View All");
-        tableChoices.put("employer", ConsultantData.getAllConsultants());
-        tableChoices.put("location", ConsultantData.getAllCities());
-        tableChoices.put("positionType", ConsultantData.getAllStates());
-        tableChoices.put("coreCompetency", ConsultantData.getAllZipCodes());
+        tableChoices.put("name", ConsultantData.getAllConsultants());
+        tableChoices.put("city", ConsultantData.getAllCities());
+        tableChoices.put("state", ConsultantData.getAllStates());
+        tableChoices.put("zipCode", ConsultantData.getAllZipCodes());
     }
 
     @RequestMapping(value = "")
@@ -41,10 +42,10 @@ public class HomeController {
         model.addAttribute("columns", columnChoices);
         model.addAttribute("tableChoices", tableChoices);
         model.addAttribute("all",ConsultantData.findAll());
-        model.addAttribute("employers", ConsultantData.getAllConsultants());
-        model.addAttribute("locations", ConsultantData.getAllCities());
-        model.addAttribute("positions", ConsultantData.getAllStates());
-        model.addAttribute("skills", ConsultantData.getAllZipCodes());
+        model.addAttribute("names", ConsultantData.getAllConsultants());
+        model.addAttribute("cities", ConsultantData.getAllCities());
+        model.addAttribute("states", ConsultantData.getAllStates());
+        model.addAttribute("zipCodes", ConsultantData.getAllZipCodes());
 
         return "list";
     }
@@ -54,13 +55,13 @@ public class HomeController {
                                                   @RequestParam String column,
                                                   @RequestParam String value) {
         ArrayList<Consultant> consultants;
-        if (column.toLowerCase().equals("all")){
+//        if (column.toLowerCase().equals("all")){
             consultants = ConsultantData.findAll();
             model.addAttribute("title", "All Consultants");
-        } else {
-            consultants = ConsultantData.findByColumnAndValue(column, value);
-            model.addAttribute("title", "Consultants with " + columnChoices.get(column) + ": " + value);
-        }
+//        } else {
+//            consultants = ConsultantData.findByColumnAndValue(column, value);
+//            model.addAttribute("title", "Consultants with " + columnChoices.get(column) + ": " + value);
+//        }
         model.addAttribute("consultants", consultants);
 
         return "list-consultants";

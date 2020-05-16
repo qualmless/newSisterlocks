@@ -25,7 +25,7 @@ public class Consultant {
     }
 
     // Initialize the id and value fields.
-    public Consultant(String Name,
+    public Consultant(String name,
                String address,
                String city,
                String state,
