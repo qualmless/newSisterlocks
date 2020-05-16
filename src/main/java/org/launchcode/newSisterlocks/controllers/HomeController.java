@@ -1,6 +1,7 @@
 package org.launchcode.newSisterlocks.controllers;
 
 import org.launchcode.newSisterlocks.models.Consultant;
+import org.launchcode.newSisterlocks.models.ConsultantData;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,13 +16,13 @@ public class HomeController {
     static HashMap<String, String> columnChoices = new HashMap<>();
     static HashMap<String, Object> tableChoices = new HashMap<>();
 
-    public ListController () {
+    public HomeController () {
         columnChoices.put("all", "All");
         columnChoices.put("name", "Consultant Name");
         columnChoices.put("address", "Address");
         columnChoices.put("city", "City");
         columnChoices.put("state", "State");
-        columnChoices.put("zip", "Zip");
+        columnChoices.put("zipCode", "ZipCode");
         columnChoices.put("phoneNumber", "Phone Number");
         columnChoices.put("email", "Email");
         columnChoices.put("salonOrHome", "Salon or Home");
@@ -29,21 +30,21 @@ public class HomeController {
         columnChoices.put("traineeOrConsultant", "Trainee or Consultant");
 
         tableChoices.put("all", "View All");
-        tableChoices.put("employer", ConsultantData.getAllEmployers());
-        tableChoices.put("location", JobData.getAllLocations());
-        tableChoices.put("positionType", JobData.getAllPositionTypes());
-        tableChoices.put("coreCompetency", JobData.getAllCoreCompetency());
+        tableChoices.put("employer", ConsultantData.getAllConsultants());
+        tableChoices.put("location", ConsultantData.getAllCities());
+        tableChoices.put("positionType", ConsultantData.getAllStates());
+        tableChoices.put("coreCompetency", ConsultantData.getAllZipCodes());
     }
 
     @RequestMapping(value = "")
     public String list(Model model) {
         model.addAttribute("columns", columnChoices);
         model.addAttribute("tableChoices", tableChoices);
-        model.addAttribute("all",JobData.findAll());
-        model.addAttribute("employers", JobData.getAllEmployers());
-        model.addAttribute("locations", JobData.getAllLocations());
-        model.addAttribute("positions", JobData.getAllPositionTypes());
-        model.addAttribute("skills", JobData.getAllCoreCompetency());
+        model.addAttribute("all",ConsultantData.findAll());
+        model.addAttribute("employers", ConsultantData.getAllConsultants());
+        model.addAttribute("locations", ConsultantData.getAllCities());
+        model.addAttribute("positions", ConsultantData.getAllStates());
+        model.addAttribute("skills", ConsultantData.getAllZipCodes());
 
         return "list";
     }
@@ -54,10 +55,10 @@ public class HomeController {
                                                   @RequestParam String value) {
         ArrayList<Consultant> consultants;
         if (column.toLowerCase().equals("all")){
-            jobs = JobData.findAll();
+            consultants = ConsultantData.findAll();
             model.addAttribute("title", "All Jobs");
         } else {
-            jobs = JobData.findByColumnAndValue(column, value);
+            consultants = ConsultantData.findByColumnAndValue(column, value);
             model.addAttribute("title", "Jobs with " + columnChoices.get(column) + ": " + value);
         }
         model.addAttribute("consultants", consultants);
