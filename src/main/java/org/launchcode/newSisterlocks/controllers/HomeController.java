@@ -56,13 +56,13 @@ public class HomeController {
         ArrayList<Consultant> consultants;
         if (column.toLowerCase().equals("all")){
             consultants = ConsultantData.findAll();
-            model.addAttribute("title", "All Jobs");
+            model.addAttribute("title", "All Consultants");
         } else {
             consultants = ConsultantData.findByColumnAndValue(column, value);
-            model.addAttribute("title", "Jobs with " + columnChoices.get(column) + ": " + value);
+            model.addAttribute("title", "Consultants with " + columnChoices.get(column) + ": " + value);
         }
         model.addAttribute("consultants", consultants);
 
-        return "list-jobs";
+        return "list-consultants";
     }
 }

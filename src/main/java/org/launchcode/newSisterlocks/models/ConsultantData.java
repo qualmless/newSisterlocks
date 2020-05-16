@@ -78,7 +78,9 @@ public class ConsultantData {
 
 
     public static String getFieldValue(Consultant consultant, String fieldName){
-        String theValue;
+
+        String theValue = "";
+
         if (fieldName.equals("name")){
             theValue = consultant.getName();
         } else if (fieldName.equals("city")){
