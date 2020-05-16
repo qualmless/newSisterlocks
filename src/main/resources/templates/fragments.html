@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
 
+<!--styles import fragment-->
 <head th:fragment="head">
 
     <!-- Bootstrap stylesheets and script -->
@@ -11,6 +12,7 @@
 
 <body>
 
+<!--header/navbar fragment-->
     <div th:fragment="page-header" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container">
 <!--            <div class="navbar-header">-->
@@ -24,16 +26,37 @@
             </div>
         </div>
     </div>
-    columnChoices.put("address", "Address");
-    columnChoices.put("city", "City");
-    columnChoices.put("state", "State");
-    columnChoices.put("zip", "Zip");
-    columnChoices.put("phoneNumber", "Phone Number");
-    columnChoices.put("email", "Email");
-    columnChoices.put("salonOrHome", "Salon or Home");
-    columnChoices.put("salonName", "Salon Name");
-    columnChoices.put("", "Trainee or Consultant");
 
+
+<!--search form fragment-->
+    <div th:fragment="search-form">
+    <form th:action="@{/search/results}" method = "post">
+        <h2>Search by:</h2>
+
+        <p>
+            <span th:each="column : ${columns}">
+                <input
+                        type="radio"
+                        name="searchType"
+                        th:id="${column.key}"
+                        th:value="${column.key}"
+                        th:checked="${column.key == 'all'}"/>
+                <label th:for="${column.key}" th:text="${column.value}"></label>
+            </span>
+
+        </p>
+
+        <p>
+            <label for="searchTerm">Keyword:</label>
+            <input type="text" name="searchTerm" id="searchTerm" />
+        </p>
+
+        <input type="submit" value="Search" />
+    </form>
+    </div>
+
+
+<!--table of consultants fragment-->
     <table th:fragment="list-consultants-loop" class="consultant-listing" >
         <tr th:each="consultant : ${consultants}">
             <td th:utext="
