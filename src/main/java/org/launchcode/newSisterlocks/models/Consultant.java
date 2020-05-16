@@ -11,7 +11,7 @@ public class Consultant {
     private String address;
     private String city;
     private String state;
-    private Integer zipCode;
+    private String zipCode;
     private String phoneNumber;
     private String email;
     private String salonOrHome;
@@ -25,11 +25,11 @@ public class Consultant {
     }
 
     // Initialize the id and value fields.
-    public Consultant(String aName,
+    public Consultant(String Name,
                String address,
                String city,
                String state,
-               Integer zipCode,
+               String zipCode,
                String phoneNumber,
                String email,
                String salonOrHome,
@@ -44,6 +44,10 @@ public class Consultant {
         this.email=email;
         this.salonOrHome=salonOrHome;
         this.salonName=salonName;
+    }
+
+    public Consultant(String aName, String anAddress, String aCity, String aState, String aZipCode, String aPhoneNumber, String anEmail, String betweenSalonOrHome, String aSalonName, String betweenTraineeOrConsultant) {
+
     }
 
 
@@ -98,11 +102,11 @@ public class Consultant {
         this.state = state;
     }
 
-    public Integer getZipCode() {
+    public String getZipCode() {
         return zipCode;
     }
 
-    public void setZipCode(Integer zipCode) {
+    public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
 

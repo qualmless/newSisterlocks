@@ -1,8 +1,8 @@
 package org.launchcode.newSisterlocks.models;
 
-public class State extends ConsultantField {
+public class Name extends ConsultantField {
 
-    public State(String value) {
+    public Name(String value) {
         super(value);
     }
 

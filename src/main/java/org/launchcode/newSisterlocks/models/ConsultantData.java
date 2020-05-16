@@ -20,6 +20,7 @@ public class ConsultantData {
     private static boolean isDataLoaded = false;
 
     private static ArrayList<Consultant> allConsultants;
+    private static ArrayList<Name> allNames;
     private static ArrayList<City> allCities = new ArrayList<>();
     private static ArrayList<State> allStates = new ArrayList<>();
     private static ArrayList<ZipCode> allZipCodes = new ArrayList<>();
@@ -169,14 +170,14 @@ public class ConsultantData {
                 String aSalonName = record.get(8);
                 String betweenTraineeOrConsultant = record.get(9);
 
-                Consultant newName = (Consultant) findExistingObject(allConsultants, aName);
+                Name newName = (Name) findExistingObject(allNames, aName);
                 City newCity = (City) findExistingObject(allCities, aCity);
                 State newState = (State) findExistingObject(allStates, aState);
                 ZipCode newZipCode = (ZipCode) findExistingObject(allZipCodes, aZipCode);
 
-                if (newEmployer == null){
-                    newEmployer = new Employer(anEmployer);
-                    allEmployers.add(newEmployer);
+                if (newName == null){
+                    newName = new Name(aName);
+                    allNames.add(newName);
                 }
 
                 if (newCity == null){
