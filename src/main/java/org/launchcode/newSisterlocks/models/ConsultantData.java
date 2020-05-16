@@ -1,5 +1,8 @@
 package org.launchcode.newSisterlocks.models;
 
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
 import org.launchcode.newSisterlocks.NameSorter;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -116,6 +119,15 @@ public class ConsultantData {
         }
 
         return jobs;
+    }
+
+    private static Object findExistingObject(ArrayList list, String value){
+        for (Object item : list){
+            if (item.toString().toLowerCase().equals(value.toLowerCase())){
+                return item;
+            }
+        }
+        return null;
     }
 
 
