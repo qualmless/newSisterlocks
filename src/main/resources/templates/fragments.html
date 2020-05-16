@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+
+<head th:fragment="head">
+
+    <!-- Bootstrap stylesheets and script -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/main/resources/static/styles.css" >
+
+</head>
+
+<body>
+
+    <div th:fragment="page-header" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container">
+<!--            <div class="navbar-header">-->
+<!--                <a th:href="@{/}" class="navbar-brand">TechJobs</a>-->
+<!--            </div>-->
+            <div class="navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li><a th:href="@{/search}">Search</a></li>
+                    <li><a th:href="@{/list}">List</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <table th:fragment="list-consultants-loop" class="consultant-listing" >
+        <tr th:each="consultant : ${consultants}">
+            <td th:utext="
+            'ID: ' + ${consultant.id} + '<br>'+
+            'Name: ' + ${consultant.name} + '<br>'+
+            'Employer: ' + ${consultant.employer} + '<br>'+
+            'Location: ' + ${consultant.location} + '<br>'+
+            'Position Type: ' + ${consultant.positionType} + '<br>'+
+            'Core Competency: ' + ${consultant.coreCompetency} + '<br>'"></td>
+        </tr>
+
+    </table>
+
+</body>
+</html>
