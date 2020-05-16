@@ -1,5 +1,6 @@
 package org.launchcode.newSisterlocks.models;
 
+import org.launchcode.newSisterlocks.NameSorter;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
@@ -121,72 +122,78 @@ public class ConsultantData {
     /**
      * Read in data from a CSV file and store it in an ArrayList of Job objects.
      */
-//    private static void loadData() {
-//
-//        // Only load data once
-//        if (isDataLoaded) {
-//            return;
-//        }
-//
-//        try {
-//
-//            // Open the CSV file and set up pull out column header info and records
-//            Resource resource = new ClassPathResource(DATA_FILE);
-//            InputStream is = resource.getInputStream();
-//            Reader reader = new InputStreamReader(is);
-//            CSVParser parser = CSVFormat.RFC4180.withFirstRecordAsHeader().parse(reader);
-//            List<CSVRecord> records = parser.getRecords();
-//            Integer numberOfColumns = records.get(0).size();
-//            String[] headers = parser.getHeaderMap().keySet().toArray(new String[numberOfColumns]);
-//
-//            allJobs = new ArrayList<>();
-//
-//            // Put the records into a more friendly format
-//            for (CSVRecord record : records) {
-//
-//                String aName = record.get(0);
-//                String anEmployer = record.get(1);
-//                String aLocation = record.get(2);
-//                String aPosition = record.get(3);
-//                String aSkill = record.get(4);
-//
-//                Employer newEmployer = (Employer) findExistingObject(allEmployers, anEmployer);
-//                Location newLocation = (Location) findExistingObject(allLocations, aLocation);
-//                PositionType newPosition = (PositionType) findExistingObject(allPositionTypes, aPosition);
-//                CoreCompetency newSkill = (CoreCompetency) findExistingObject(allCoreCompetency, aSkill);
-//
-//                if (newEmployer == null){
-//                    newEmployer = new Employer(anEmployer);
-//                    allEmployers.add(newEmployer);
-//                }
-//
-//                if (newLocation == null){
-//                    newLocation = new Location(aLocation);
-//                    allLocations.add(newLocation);
-//                }
-//
-//                if (newSkill == null){
-//                    newSkill = new CoreCompetency(aSkill);
-//                    allCoreCompetency.add(newSkill);
-//                }
-//
-//                if (newPosition == null){
-//                    newPosition = new PositionType(aPosition);
-//                    allPositionTypes.add(newPosition);
-//                }
-//
-//                Job newJob = new Job(aName, newEmployer, newLocation, newPosition, newSkill);
-//
-//                allJobs.add(newJob);
-//            }
-//            // flag the data as loaded, so we don't do it twice
-//            isDataLoaded = true;
-//
-//        } catch (IOException e) {
-//            System.out.println("Failed to load job data");
-//            e.printStackTrace();
-//        }
-//    }
+    private static void loadData() {
+
+        // Only load data once
+        if (isDataLoaded) {
+            return;
+        }
+
+        try {
+
+            // Open the CSV file and set up pull out column header info and records
+            Resource resource = new ClassPathResource(DATA_FILE);
+            InputStream is = resource.getInputStream();
+            Reader reader = new InputStreamReader(is);
+            CSVParser parser = CSVFormat.RFC4180.withFirstRecordAsHeader().parse(reader);
+            List<CSVRecord> records = parser.getRecords();
+            Integer numberOfColumns = records.get(0).size();
+            String[] headers = parser.getHeaderMap().keySet().toArray(new String[numberOfColumns]);
+
+            allConsultants = new ArrayList<>();
+
+            // Put the records into a more friendly format
+            for (CSVRecord record : records) {
+
+
+                String aName = record.get(0);
+                String anAddress = record.get(1);
+                String aCity = record.get(2);
+                String aState = record.get(3);
+                String aZipCode = record.get(4);
+                String aPhoneNumber = record.get(5);
+                String anEmail = record.get(6);
+                String betweenSalonOrHome = record.get(7);
+                String aSalonName = record.get(8);
+                String betweenTraineeOrConsultant = record.get(9);
+
+                Consultant newName = (Consultant) findExistingObject(allConsultants, aName);
+                City newCity = (City) findExistingObject(allCities, aCity);
+                State newState = (State) findExistingObject(allStates, aState);
+                ZipCode newZipCode = (ZipCode) findExistingObject(allZipCodes, aZipCode);
+
+                if (newEmployer == null){
+                    newEmployer = new Employer(anEmployer);
+                    allEmployers.add(newEmployer);
+                }
+
+                if (newCity == null){
+                    newCity = new City(aCity);
+                    allCities.add(newCity);
+                }
+
+                if (newState == null){
+                    newState = new State(aState);
+                    allStates.add(newState);
+                }
+
+                if (newZipCode == null){
+                    newZipCode = new ZipCode(aZipCode);
+                    allZipCodes.add(newZipCode);
+                }
+
+                Consultant newConsultant = new Consultant(aName, anAddress, aCity, aState, aZipCode,aPhoneNumber,anEmail,betweenSalonOrHome,aSalonName,betweenTraineeOrConsultant);
+
+                allConsultants.add(newConsultant);
+            }
+            // flag the data as loaded, so we don't do it twice
+            isDataLoaded = true;
+
+        } catch (IOException e) {
+            System.out.println("Failed to load job data");
+            e.printStackTrace();
+        }
+    }
 
 
 
@@ -202,7 +209,7 @@ public class ConsultantData {
         return allCities;
     }
 
-    public static ArrayList<States> getAllStates() {
+    public static ArrayList<State> getAllStates() {
         loadData();
         allStates.sort(new NameSorter());
         return allStates;
