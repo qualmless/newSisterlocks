@@ -27,7 +27,7 @@ public class ConsultantData {
 
 
     /**
-     * Fetch list of all job objects from loaded data,
+     * Fetch list of all consultant objects from loaded data,
      * without duplicates, then return a copy.
      */
     public static ArrayList<Consultant> findAll() {
@@ -35,45 +35,45 @@ public class ConsultantData {
         // load data, if not already loaded
         loadData();
 
-        // Bonus mission; normal version returns allJobs
+        // Bonus mission; normal version returns allConsultants
         return new ArrayList<>(allConsultants);
     }
 
     /**
-     * Returns the results of searching the Jobs data by field and search term.
+     * Returns the results of searching the Consultants data by field and search term.
      *
      * For example, searching for employer "Enterprise" will include results
      * with "Enterprise Holdings, Inc".
      *
-     * @param column Job field that should be searched.
+     * @param column Consultant field that should be searched.
      * @param value Value of the field to search for.
-     * @return List of all jobs matching the criteria.
+     * @return List of all consultants matching the criteria.
      */
     public static ArrayList<Consultant> findByColumnAndValue(String column, String value) {
 
         // load data, if not already loaded
         loadData();
 
-        ArrayList<Consultant> jobs = new ArrayList<>();
+        ArrayList<Consultant> consultants = new ArrayList<>();
 
         if (value.toLowerCase().equals("all")){
             return findAll();
         }
 
         if (column.equals("all")){
-            jobs = findByValue(value);
-            return jobs;
+            consultants = findByValue(value);
+            return consultants;
         }
-        for (Consultant job : allConsultants) {
+        for (Consultant consultant : allConsultants) {
 
-            String aValue = getFieldValue(job, column);
+            String aValue = getFieldValue(consultant, column);
 
             if (aValue != null && aValue.toLowerCase().contains(value.toLowerCase())) {
-                jobs.add(job);
+                consultants.add(consultant);
             }
         }
 
-        return jobs;
+        return consultants;
     }
 
 
@@ -93,33 +93,33 @@ public class ConsultantData {
     }
 
     /**
-     * Search all Job fields for the given term.
+     * Search all Consultant fields for the given term.
      *
      * @param value The search term to look for.
-     * @return      List of all jobs with at least one field containing the value.
+     * @return      List of all consultants with at least one field containing the value.
      */
     public static ArrayList<Consultant> findByValue(String value) {
 
         // load data, if not already loaded
         loadData();
 
-        ArrayList<Consultant> jobs = new ArrayList<>();
+        ArrayList<Consultant> consultants = new ArrayList<>();
 
         for (Consultant consultant : allConsultants) {
 
             if (consultant.getName().toLowerCase().contains(value.toLowerCase())) {
-                jobs.add(consultant);
+                consultants.add(consultant);
             } else if (consultant.getCity().toString().toLowerCase().contains(value.toLowerCase())) {
-                jobs.add(consultant);
+                consultants.add(consultant);
             } else if (consultant.getState().toString().toLowerCase().contains(value.toLowerCase())) {
-                jobs.add(consultant);
+                consultants.add(consultant);
             } else if (consultant.getZipCode().toString().toLowerCase().contains(value.toLowerCase())) {
-                jobs.add(consultant);
+                consultants.add(consultant);
             }
 
         }
 
-        return jobs;
+        return consultants;
     }
 
     private static Object findExistingObject(ArrayList list, String value){
@@ -133,7 +133,7 @@ public class ConsultantData {
 
 
     /**
-     * Read in data from a CSV file and store it in an ArrayList of Job objects.
+     * Read in data from a CSV file and store it in an ArrayList of consultant objects.
      */
     private static void loadData() {
 
@@ -203,7 +203,7 @@ public class ConsultantData {
             isDataLoaded = true;
 
         } catch (IOException e) {
-            System.out.println("Failed to load job data");
+            System.out.println("Failed to load consultant info");
             e.printStackTrace();
         }
     }
