@@ -20,18 +20,19 @@ public class HomeController {
     public HomeController () {
         columnChoices.put("all", "All");
         columnChoices.put("name", "Consultant Name");
-        columnChoices.put("address", "Address");
+//        columnChoices.put("address", "Address");
         columnChoices.put("city", "City");
         columnChoices.put("state", "State");
         columnChoices.put("zipCode", "ZipCode");
-        columnChoices.put("phoneNumber", "Phone Number");
-        columnChoices.put("email", "Email");
-        columnChoices.put("salonOrHome", "Salon or Home");
-        columnChoices.put("salonName", "Salon Name");
-        columnChoices.put("traineeOrConsultant", "Trainee or Consultant");
+//        columnChoices.put("phoneNumber", "Phone Number");
+//        columnChoices.put("email", "Email");
+//        columnChoices.put("salonOrHome", "Salon or Home");
+//        columnChoices.put("salonName", "Salon Name");
+//        columnChoices.put("traineeOrConsultant", "Trainee or Consultant");
 
         tableChoices.put("all", "View All");
-        tableChoices.put("name", ConsultantData.getAllConsultants());
+//        tableChoices.put("consultant", ConsultantData.getAllConsultants());
+        tableChoices.put("name", ConsultantData.getAllNames());
         tableChoices.put("city", ConsultantData.getAllCities());
         tableChoices.put("state", ConsultantData.getAllStates());
         tableChoices.put("zipCode", ConsultantData.getAllZipCodes());
@@ -42,7 +43,8 @@ public class HomeController {
         model.addAttribute("columns", columnChoices);
         model.addAttribute("tableChoices", tableChoices);
         model.addAttribute("all",ConsultantData.findAll());
-        model.addAttribute("names", ConsultantData.getAllConsultants());
+        model.addAttribute("consultant", ConsultantData.getAllConsultants());
+        model.addAttribute("names", ConsultantData.getAllNames());
         model.addAttribute("cities", ConsultantData.getAllCities());
         model.addAttribute("states", ConsultantData.getAllStates());
         model.addAttribute("zipCodes", ConsultantData.getAllZipCodes());

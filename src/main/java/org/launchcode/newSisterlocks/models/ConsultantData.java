@@ -230,6 +230,12 @@ public class ConsultantData {
         return allConsultants;
     }
 
+    public static ArrayList<Name> getAllNames() {
+        loadData();
+        allNames.sort(new NameSorter());
+        return allNames;
+    }
+
     public static ArrayList<City> getAllCities() {
         loadData();
         allCities.sort(new NameSorter());
