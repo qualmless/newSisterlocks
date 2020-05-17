@@ -1,3 +1,8 @@
-table {
+table, th, tr, td {
     border:5px solid;
+    padding: 10px;
+}
+
+.my-form {
+    padding: 60px 0 40px 0;
 }
