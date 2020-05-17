@@ -47,7 +47,7 @@ public class HomeController {
         model.addAttribute("states", ConsultantData.getAllStates());
         model.addAttribute("zipCodes", ConsultantData.getAllZipCodes());
 
-        return "list";
+        return "index";
     }
 
     @RequestMapping(value = "consultants")

@@ -199,7 +199,17 @@ public class ConsultantData {
                     allZipCodes.add(newZipCode);
                 }
 
-                Consultant newConsultant = new Consultant(aName, anAddress, aCity, aState, aZipCode,aPhoneNumber,anEmail,betweenSalonOrHome,aSalonName,betweenTraineeOrConsultant);
+                Consultant newConsultant = new Consultant(
+                        aName,
+                        anAddress,
+                        aCity,
+                        aState,
+                        aZipCode,
+                        aPhoneNumber,
+                        anEmail,
+                        betweenSalonOrHome,
+                        aSalonName,
+                        betweenTraineeOrConsultant);
 
                 allConsultants.add(newConsultant);
             }
