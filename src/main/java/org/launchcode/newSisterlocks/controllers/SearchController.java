@@ -27,9 +27,9 @@ public class SearchController {
 
     @PostMapping(value = "results")
     public String displaySearchResults(Model model,
-                                       @RequestParam String zipCode,
+                                       @RequestParam String zipCode/*,
                                        //i think this should be radius but i don't know how
-                                       @RequestParam String searchType){
+                                       @RequestParam String searchType*/){
         model.addAttribute("columns", columnChoices);
         ArrayList<Consultant> consultants;
 
@@ -38,8 +38,9 @@ public class SearchController {
 //            model.addAttribute("title", "All Consultants");
 //        }
 //        else {
-            consultants = ConsultantData.findByColumnAndValue(radius, zipCode);
-            model.addAttribute("title", "Consultants within " + columnChoices.get(radius) + " of Zip Code: " + zipCode);
+            consultants = ConsultantData.findByColumnAndValue(/*radius,*/ zipCode);
+//            model.addAttribute("title", "Consultants within " + columnChoices.get(radius) + " of Zip Code: " + zipCode);
+            model.addAttribute("title", "Consultants within 6 miles of Zip Code: " + zipCode);
 
 //        }
         model.addAttribute("consultants", consultants);
