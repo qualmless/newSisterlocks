@@ -46,7 +46,16 @@ public class Consultant {
         this.salonName=salonName;
     }
 
-    public Consultant(String aName, String anAddress, String aCity, String aState, String aZipCode, String aPhoneNumber, String anEmail, String betweenSalonOrHome, String aSalonName, String betweenTraineeOrConsultant) {
+    public Consultant(String aName,
+                      String anAddress,
+                      String aCity,
+                      String aState,
+                      String aZipCode,
+                      String aPhoneNumber,
+                      String anEmail,
+                      String betweenSalonOrHome,
+                      String aSalonName,
+                      String betweenTraineeOrConsultant) {
 
     }
 

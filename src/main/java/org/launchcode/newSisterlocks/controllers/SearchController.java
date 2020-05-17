@@ -21,9 +21,14 @@ public class SearchController {
         return "search";
     }
 
+
+
+//     TODO #99: add google api.
+
     @PostMapping(value = "results")
     public String displaySearchResults(Model model,
                                        @RequestParam String zipCode,
+                                       //i think this should be radius but i don't know how
                                        @RequestParam String searchType){
         model.addAttribute("columns", columnChoices);
         ArrayList<Consultant> consultants;

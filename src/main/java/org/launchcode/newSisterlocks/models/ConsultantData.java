@@ -20,7 +20,7 @@ public class ConsultantData {
     private static boolean isDataLoaded = false;
 
     private static ArrayList<Consultant> allConsultants;
-    private static ArrayList<Name> allNames;
+    private static ArrayList<Name> allNames = new ArrayList<>();
     private static ArrayList<City> allCities = new ArrayList<>();
     private static ArrayList<State> allStates = new ArrayList<>();
     private static ArrayList<ZipCode> allZipCodes = new ArrayList<>();
