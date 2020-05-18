@@ -44,7 +44,8 @@ public class SearchController {
 
 //        }
         model.addAttribute("consultants", consultants);
-        return "search";
+        return "index";
     }
+
 
 }

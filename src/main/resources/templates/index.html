@@ -16,46 +16,29 @@
         <p>(click to expand details)</p>
 
 <!--TABLE OF RESULTS------------------------------------------------------------------------------------------>
+    <table th:replace="fragments::list-consultants-results"></table>
 
-        <table class="centeredTable consultants-table-index">
-            <tr>
-                <!--TODO: why are the headers in the wrong order -->
-                <th:block th:each="column : ${columns}">
-                    <th th:text = "${column.value}"></th>
-                </th:block>
-            </tr>
-            <tr>
 
-        <!--TODO: figure out the format for the table so it's not a list-->
-                <td th:each="category : ${tableChoices}">
-                    <ul class="list-unstyled">
-                        <li th:each="item : ${category.value}">
-                            <a th:href="@{/list/consultants(column=${category.key},value=${item})}" th:text="${item}"></a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
     </div>
 
     <!--TODO: add details-->
     <div class="consultant-details">
         <h2>Consultant Details (when clicked)</h2>
-        'ID: ' + ${consultant.id} + '<br>'+
-        'Name: ' + ${consultant.name} + '<br>'+
-        'Phone Number: ' + ${consultant.phoneNumber} + '<br>'+
-        'Email: ' + ${consultant.email} + '<br>'+
-        'Address: ' + ${consultant.address} + '<br>'+
-        'City: ' + ${consultant.city} + '<br>'+
-        'State: ' + ${consultant.state} + '<br>'+
-        'Zip: ' + ${consultant.zip} + '<br>'+
-        'Trainee or Consultant: ' + ${consultant.traineeOrConsultant} + '<br>'+
-        'Salon or Home: ' + ${consultant.salonOrHome} + '<br>'+
-        'Salon Name (if applicable): ' + ${consultant.salonName} + '<br>'
+        <P>
+            'Name: ' + ${consultant.name} + '<br>'+
+            'Phone Number: ' + ${consultant.phoneNumber} + '<br>'+
+            'Email: ' + ${consultant.email} + '<br>'+
+            'Address: ' + ${consultant.address} + '<br>'+
+            'City: ' + ${consultant.city} + '<br>'+
+            'State: ' + ${consultant.state} + '<br>'+
+            'Zip: ' + ${consultant.zip} + '<br>'+
+            'Trainee or Consultant: ' + ${consultant.traineeOrConsultant} + '<br>'+
+            'Salon or Home: ' + ${consultant.salonOrHome} + '<br>'+
+            'Salon Name (if applicable): ' + ${consultant.salonName} + '<br>'
+        </P>
     </div>
 
 </div>
-<!--<table th:replace="fragments::list-consultants-loop"></table>-->
 
 </body>
 
