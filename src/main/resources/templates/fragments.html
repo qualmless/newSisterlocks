@@ -14,7 +14,7 @@
 
 <!--header/navbar fragment-->
     <div th:fragment="page-header" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container">
+        <div> <!--class="container"-->
 <!--            <div class="navbar-header">-->
 <!--                <a th:href="@{/}" class="navbar-brand">TechJobs</a>-->
 <!--            </div>-->
@@ -63,7 +63,7 @@
                    name="salonOnly"
                    id="salonOnly"
                    value="salonOnly"/>
-
+            <br>
             <label for="zipCode">Zip Code:</label>
             <input type="text" name="zipCode" id="zipCode" />
             <label for="radius">Radius: </label>
@@ -82,9 +82,10 @@
     </div>
 
 
+<!--TODO #3: make this fragment work or figure out how to list -->
 <!--table of consultants fragment-->
     <table th:fragment="list-consultants-loop" class="consultant-listing" >
-        <tr th:each="consultant : ${consultants}">
+        <tr th:each="consultant : ${allConsultants}">
             <td th:utext="
             'ID: ' + ${consultant.id} + '<br>'+
             'Name: ' + ${consultant.name} + '<br>'+

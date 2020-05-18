@@ -6,3 +6,12 @@ table, th, tr, td {
 .my-form {
     padding: 60px 0 40px 0;
 }
+
+.consultants-table-index {
+    float: left;
+    margin-right: 10%;
+}
+
+.navbar ul li {
+    padding: 5px;
+}

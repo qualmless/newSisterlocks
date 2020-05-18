@@ -16,10 +16,11 @@
 
 <div th:replace="fragments :: search-form"></div>
 
-<h2>View consultants by:</h2>
+<h2>Consultants results:</h2>
+<p>(click to expand details)</p>
 
 <!--TABLE OF RESULTS------------------------------------------------------------------------------------------>
-<table class="centeredTable">
+<table class="centeredTable consultants-table-index">
     <tr>
         <!--                <th>All</th>-->
         <th:block th:each="column : ${columns}">
@@ -28,6 +29,7 @@
     </tr>
     <tr>
 
+<!--TODO #2: figure out the format for the table so it's not a list-->
         <td th:each="category : ${tableChoices}">
             <ul class="list-unstyled">
                 <li th:each="item : ${category.value}">
@@ -37,6 +39,13 @@
         </td>
     </tr>
 </table>
+
+
+<!--TODO #3: add details and float right-->
+<div class="consultant-details">
+    here's some details
+</div>
+<!--<table th:replace="fragments::list-consultants-loop"></table>-->
 
 </body>
 
