@@ -3,21 +3,16 @@
 
 <!--styles import fragment-->
 <head th:fragment="head">
-
     <!-- Bootstrap stylesheets and script -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link th:href="@{styles.css}" rel="stylesheet" />
-
 </head>
 
 <body>
 
 <!--header/navbar fragment-->
     <div th:fragment="page-header" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div> <!--class="container"-->
-<!--            <div class="navbar-header">-->
-<!--                <a th:href="@{/}" class="navbar-brand">TechJobs</a>-->
-<!--            </div>-->
+        <div>
             <div class="navbar">
                 <ul class="navbar-nav mr-auto">
                     <li><a th:href="@{/search}">Search</a></li>
@@ -27,23 +22,11 @@
         </div>
     </div>
 
-
+<!--TODO: connect search-->
 <!--search form fragment-->
     <div th:fragment="search-form" class="my-form">
     <form th:action="@{/search/results}" method = "post">
         <h2>Search by:</h2>
-
-<!--        <p>-->
-<!--            <span th:each="column : ${columns}">-->
-<!--                <input-->
-<!--                        type="radio"-->
-<!--                        name="searchType"-->
-<!--                        th:id="${column.key}"-->
-<!--                        th:value="${column.key}"-->
-<!--                        th:checked="${column.key == 'all'}"/>-->
-<!--                <label th:for="${column.key}" th:text="${column.value}"></label>-->
-<!--            </span>-->
-<!--        </p>-->
 
         <p>
             <label for="consultant">Consultant</label>
@@ -82,7 +65,7 @@
     </div>
 
 
-<!--TODO #3: make this fragment work or figure out how to list -->
+<!--TODO: make this fragment work or figure out how to list -->
 <!--table of consultants fragment-->
     <table th:fragment="list-consultants-loop" class="consultant-listing" >
         <tr th:each="consultant : ${allConsultants}">

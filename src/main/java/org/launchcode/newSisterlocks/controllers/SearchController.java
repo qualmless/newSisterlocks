@@ -23,7 +23,7 @@ public class SearchController {
 
 
 
-//     TODO #99: add google api
+//  TODO: add google api
 
     @PostMapping(value = "results")
     public String displaySearchResults(Model model,

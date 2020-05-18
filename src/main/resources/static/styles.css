@@ -8,10 +8,22 @@ table, th, tr, td {
 }
 
 .consultants-table-index {
+    margin-right: 5%;
+}
+
+.left-side {
     float: left;
-    margin-right: 10%;
 }
 
 .navbar ul li {
     padding: 5px;
+}
+
+.consultant-details {
+    float: left;
+    margin: 5% 0 0 5%;
+}
+
+.body-content {
+    padding: 2%;
 }
