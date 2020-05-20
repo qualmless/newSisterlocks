@@ -172,7 +172,7 @@ public class ConsultantData {
                 String anEmail = record.get(6);
                 String betweenSalonOrHome = record.get(7);
                 String aSalonName = record.get(8);
-                String betweenTraineeOrConsultant = record.get(9);
+                String aConsultantLevel = record.get(9);
 
                 Name newName = (Name) findExistingObject(allNames, aName);
                 City newCity = (City) findExistingObject(allCities, aCity);
@@ -209,7 +209,7 @@ public class ConsultantData {
                         anEmail,
                         betweenSalonOrHome,
                         aSalonName,
-                        betweenTraineeOrConsultant);
+                        aConsultantLevel);
 
                 allConsultants.add(newConsultant);
             }
