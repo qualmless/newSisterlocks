@@ -80,11 +80,21 @@
 
             <!--TODO: figure out the format for the table so it's not a list-->
 
-
+<!--individual cells but the wrong number-->
 <!--        <tr th:each="category : ${tableChoices}">-->
 <!--            <td th:each="item : ${category.value}" >-->
 <!--                <a th:href="@{/list/consultants(column=${category.key},value=${item})}" th:text="${item}"></a>-->
 <!--            </td>-->
+<!--        </tr>-->
+
+<!--the right number but an array prints -->
+<!--        <tr th:each="category : ${tableChoices}">-->
+<!--            <td th:each="item : ${category}" >-->
+<!--                <a th:href="@{/list/consultants(column=${category.key},value=${item})}" th:text="${tableChoices.name}"></a>-->
+<!--            </td>-->
+<!--            <td th:text="${tableChoices.city}"></td>-->
+<!--            <td th:text="${tableChoices.state}"></td>-->
+<!--            <td th:text="${tableChoices.zipCode}"></td>-->
 <!--        </tr>        -->
 
         <tr th:each="category : ${tableChoices}">

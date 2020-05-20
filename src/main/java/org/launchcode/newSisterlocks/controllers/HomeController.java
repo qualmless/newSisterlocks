@@ -50,13 +50,8 @@ public class HomeController {
                                                   @RequestParam String column,
                                                   @RequestParam String value) {
         ArrayList<Consultant> consultants;
-//        if (column.toLowerCase().equals("all")){
-            consultants = ConsultantData.findAll();
-            model.addAttribute("title", "All Consultants");
-//        } else {
-//            consultants = ConsultantData.findByColumnAndValue(column, value);
-//            model.addAttribute("title", "Consultants with " + columnChoices.get(column) + ": " + value);
-//        }
+        consultants = ConsultantData.findAll();
+        model.addAttribute("title", "All Consultants");
         model.addAttribute("consultants", consultants);
 
         return "list-consultants";
