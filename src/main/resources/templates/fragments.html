@@ -80,11 +80,14 @@
 
             <!--TODO: figure out the format for the table so it's not a list-->
 
-        <tr th:each="category : ${tableChoices}">
+        <tr th:each="item : ${tableChoices}">
 
             <td th:each="item : ${category.value}">
                 <a th:href="@{/list/consultants(column=${category.key},value=${item})}" th:text="${item}"></a>
             </td>
+            <td  th:text="${item}"></td>
+            <td  th:text="${item}"></td>
+            <td  th:text="${item}"></td>
         </tr>
     </table>
 

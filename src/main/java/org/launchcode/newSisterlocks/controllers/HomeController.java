@@ -20,20 +20,11 @@ public class HomeController {
     static SortedMap<String, Object> tableChoices = new TreeMap<>();
 
     public HomeController () {
-        columnChoices.put("all", "All");
         columnChoices.put("name", "Consultant Name");
-//        columnChoices.put("address", "Address");
         columnChoices.put("city", "City");
         columnChoices.put("state", "State");
         columnChoices.put("zipCode", "ZipCode");
-//        columnChoices.put("phoneNumber", "Phone Number");
-//        columnChoices.put("email", "Email");
-//        columnChoices.put("salonOrHome", "Salon or Home");
-//        columnChoices.put("salonName", "Salon Name");
-//        columnChoices.put("traineeOrConsultant", "Trainee or Consultant");
 
-        tableChoices.put("all", "View All");
-//        tableChoices.put("consultant", ConsultantData.getAllConsultants());
         tableChoices.put("name", ConsultantData.getAllNames());
         tableChoices.put("city", ConsultantData.getAllCities());
         tableChoices.put("state", ConsultantData.getAllStates());
