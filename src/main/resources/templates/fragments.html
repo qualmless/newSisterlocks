@@ -80,15 +80,26 @@
 
             <!--TODO: figure out the format for the table so it's not a list-->
 
-        <tr th:each="item : ${tableChoices}">
+<!--        <tr th:each="${category :tablechoices}">-->
+<!--&lt;!&ndash;            <td th:each="item : ${columnchoice}"></td>&ndash;&gt;-->
+<!--        </tr>-->
 
-            <td th:each="item : ${category.value}">
-                <a th:href="@{/list/consultants(column=${category.key},value=${item})}" th:text="${item}"></a>
+
+<!--        <tr th:each="category : ${tableChoices}">-->
+<!--            <td th:each="item : ${category.value}" >-->
+<!--                <a th:href="@{/list/consultants(column=${category.key},value=${item})}" th:text="${item}"></a>-->
+<!--            </td>-->
+<!--        </tr>        -->
+
+        <tr th:each="category : ${tableChoices}">
+            <td th:each="item : ${category}" >
+                <a th:href="@{/list/consultants(column=${category.key},value=${item})}" th:text="${tableChoices.name}"></a>
             </td>
-            <td  th:text="${item}"></td>
-            <td  th:text="${item}"></td>
-            <td  th:text="${item}"></td>
+            <td th:text="${tableChoices.city}"></td>
+            <td th:text="${tableChoices.state}"></td>
+            <td th:text="${tableChoices.zipCode}"></td>
         </tr>
+
     </table>
 
 
