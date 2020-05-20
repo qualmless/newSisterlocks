@@ -16,6 +16,7 @@ public class Consultant {
     private String email;
     private String salonOrHome;
     private String salonName;
+    private String consultantLevel;
 
 
     // Initialize a unique ID.
@@ -34,6 +35,7 @@ public class Consultant {
                String email,
                String salonOrHome,
                String salonName) {
+        //TODO: can't add consultantLevel initialization
         this();
         this.name=name;
         this.address=address;
@@ -55,7 +57,7 @@ public class Consultant {
                       String anEmail,
                       String betweenSalonOrHome,
                       String aSalonName,
-                      String betweenTraineeOrConsultant) {
+                      String aConsultantLevel) {
 
     }
 

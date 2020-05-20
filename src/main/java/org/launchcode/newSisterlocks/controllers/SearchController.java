@@ -23,7 +23,9 @@ public class SearchController {
 
 
 
-//  TODO: add google api
+// TODO: add google api
+
+// TODO: search maps wrong but it maps!
 
     @PostMapping(value = "results")
     public String displaySearchResults(Model model,
@@ -32,17 +34,8 @@ public class SearchController {
                                        @RequestParam String searchType*/){
         model.addAttribute("columns", columnChoices);
         ArrayList<Consultant> consultants;
-
-//        if (searchTerm.toLowerCase().equals("all") || searchTerm.toLowerCase().equals("")) {
-//            consultants=ConsultantData.findAll();
-//            model.addAttribute("title", "All Consultants");
-//        }
-//        else {
-            consultants = ConsultantData.findByColumnAndValue(/*radius,*/ zipCode);
-//            model.addAttribute("title", "Consultants within " + columnChoices.get(radius) + " of Zip Code: " + zipCode);
-            model.addAttribute("title", "Consultants within 6 miles of Zip Code: " + zipCode);
-
-//        }
+        consultants = ConsultantData.findByColumnAndValue(/*radius,*/ zipCode);
+        model.addAttribute("title", "Consultants within 6 miles of Zip Code: " + zipCode);
         model.addAttribute("consultants", consultants);
         return "index";
     }

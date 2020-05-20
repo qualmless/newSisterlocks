@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
 
-<!--styles import fragment-->
+<!--styles import--------------------------------------------------------------------------------------------->
+
 <head th:fragment="head">
     <!-- Bootstrap stylesheets and script -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -10,7 +11,7 @@
 
 <body>
 
-<!--header/navbar fragment-->
+<!--header/navbar--------------------------------------------------------------------------------------------->
     <div th:fragment="page-header" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div>
             <div class="navbar">
@@ -23,7 +24,7 @@
     </div>
 
 <!--TODO: connect search-->
-<!--search form fragment-->
+<!--search form----------------------------------------------------------------------------------------------->
     <div th:fragment="search-form" class="my-form">
     <form th:action="@{/search/results}" method = "post">
         <h2>Search by:</h2>
@@ -67,6 +68,7 @@
 
 <!--TODO: make this fragment work or figure out how to list -->
 
+<!--consultant list-------------------------------------------------------------------------------------->
 
     <table th:fragment="list-consultants-results" class="centeredTable consultants-table-index">
         <tr>

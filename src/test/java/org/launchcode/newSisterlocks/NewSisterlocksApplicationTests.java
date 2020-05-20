@@ -10,5 +10,10 @@ class NewSisterlocksApplicationTests {
 	void contextLoads() {
 	}
 
+
+	@Test
+	public void testIndex(){
+
+	}
 }
 
