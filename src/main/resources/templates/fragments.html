@@ -107,14 +107,25 @@
 <!--            <td th:each="item : ${zipCode}" th:text="${zipCode}"></td>-->
 <!--        </tr>        -->
 
+<!--all boxes print but are empty-->
+<!--        <tr th:each="name : ${tableChoices.name}">-->
+<!--            <td th:each="item : ${name}" th:text="${name}">-->
+<!--                <a th:href="@{/list/consultants(column=${category.key},value=${name})}" th:text="${name}"></a>-->
+<!--            </td>-->
+<!--            <td th:each="item : ${name}" th:text="${city}"></td>-->
+<!--            <td th:each="item : ${name}" th:text="${state}"></td>-->
+<!--            <td th:each="item : ${name}" th:text="${zipCode}"></td>-->
+<!--        </tr>-->
+
 
         <tr th:each="name : ${tableChoices.name}">
-            <td th:each="item : ${name}" th:text="${name}">
-                <a th:href="@{/list/consultants(column=${category.key},value=${name})}" th:text="${name}"></a>
-            </td>
-            <td th:each="item : ${name}" th:text="${city}"></td>
-            <td th:each="item : ${name}" th:text="${state}"></td>
-            <td th:each="item : ${name}" th:text="${zipCode}"></td>
+            <td th:each="item : ${tableChoices}" th:text="${name.value}"></td>
+<!--            <td th:each="item : ${tableChoices}" th:text="${city.value}"></td>-->
+<!--            <td th:each="item : ${tableChoices}" th:text="${state.value}"></td>-->
+<!--            <td th:each="item : ${tableChoices}" th:text="${zipCode.value}"></td>-->
+<!--            <td th:each="item : ${name}" th:text="${city}"></td>-->
+<!--            <td th:each="item : ${name}" th:text="${state}"></td>-->
+<!--            <td th:each="item : ${name}" th:text="${zipCode}"></td>-->
         </tr>
 
 
