@@ -16,8 +16,10 @@ import java.util.TreeMap;
 @Controller
 @RequestMapping(value = "")
 public class HomeController {
+//    static HashMap<String, String> columnChoices = new HashMap<>();
     static SortedMap<String, String> columnChoices = new TreeMap<>();
-    static SortedMap<String, Object> tableChoices = new TreeMap<>();
+    static HashMap<String, Object> tableChoices = new HashMap<>();
+//    static SortedMap<String, Object> tableChoices = new TreeMap<>();
 
     public HomeController () {
         columnChoices.put("name", "Consultant Name");
