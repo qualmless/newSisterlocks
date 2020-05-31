@@ -120,14 +120,13 @@
 <!--        </tr>-->
 
         <tr th:each="name : ${tableChoices.name}">
-            <td th:each="name : ${name}" th:text="${name.value}"></td> <!--//this makes all names-->
-            <td th:each="city : ${tableChoices.city}" th:text="${city.value}"></td> <!--//this makes all names-->
-            <td th:each="state : ${tableChoices.state}" th:text="${state.value}"></td> <!--//this makes all names-->
-            <td th:each="zipCode : ${tableChoices.zipCode}" th:text="${zipCode.value}"></td> <!--//this makes all names-->
+            <td th:each="name : ${name}" th:text="${name.value}"></td> <!--//THIS IS PERFECT. DON'T CHANGE-->
+            <td th:each="city : ${tableChoices.city}" th:text="${city.value}"></td> <!--//this makes all cities-->
+            <td th:each="state : ${tableChoices.state}" th:text="${state.value}"></td> <!--//this makes all states-->
+            <td th:each="zipCode : ${tableChoices.zipCode}" th:text="${zipCode.value}"></td> <!--//this makes all zips-->
         </tr>
 
-
-
+        
     </table>
 
 
