@@ -27,11 +27,11 @@ public class HomeController {
         columnChoices.put("state", "State");
         columnChoices.put("zipCode", "ZipCode");
 
-        tableChoices.put("consultant", ConsultantData.getAllConsultants());
-        tableChoices.put("name", ConsultantData.getAllNames());
-        tableChoices.put("city", ConsultantData.getAllCities());
-        tableChoices.put("state", ConsultantData.getAllStates());
-        tableChoices.put("zipCode", ConsultantData.getAllZipCodes());
+        tableChoices.put("consultants", ConsultantData.getAllConsultants());
+        tableChoices.put("names", ConsultantData.getAllNames());
+        tableChoices.put("cities", ConsultantData.getAllCities());
+        tableChoices.put("states", ConsultantData.getAllStates());
+        tableChoices.put("zipCodes", ConsultantData.getAllZipCodes());
     }
 
     @RequestMapping(value = "")

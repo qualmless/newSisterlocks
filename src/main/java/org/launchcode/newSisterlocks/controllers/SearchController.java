@@ -27,13 +27,17 @@ public class SearchController {
 
 // TODO: search maps wrong but it maps!
 
-    @PostMapping(value = "results")
+    @PostMapping(value = "search")
     public String displaySearchResults(Model model,
                                        @RequestParam String zipCode/*,
                                        //i think this should be radius but i don't know how
                                        @RequestParam String searchType*/){
         model.addAttribute("columns", columnChoices);
         ArrayList<Consultant> consultants;
+//        if (searchTerm.toLowerCase().equals("all") || searchTerm.toLowerCase().equals("")) {
+//            jobs=JobData.findAll();
+//            model.addAttribute("title", "All Jobs");
+//        }
         consultants = ConsultantData.findByColumnAndValue(/*radius,*/ zipCode);
         model.addAttribute("title", "Consultants within 6 miles of Zip Code: " + zipCode);
         model.addAttribute("consultants", consultants);

@@ -16,27 +16,11 @@
         <p>(click to expand details)</p>
 
 <!--TABLE OF RESULTS------------------------------------------------------------------------------------------>
-    <table th:replace="fragments::list-consultants-results"></table>
-
-
+        <table th:replace="fragments::list-consultants-results"></table>
     </div>
 
     <!--TODO: add details-->
-    <div class="consultant-details">
-        <h2>Consultant Details (when clicked)</h2>
-        <P>
-            'Name: ' + ${consultant.name} + '<br>'+
-            'Phone Number: ' + ${consultant.phoneNumber} + '<br>'+
-            'Email: ' + ${consultant.email} + '<br>'+
-            'Address: ' + ${consultant.address} + '<br>'+
-            'City: ' + ${consultant.city} + '<br>'+
-            'State: ' + ${consultant.state} + '<br>'+
-            'Zip: ' + ${consultant.zip} + '<br>'+
-            'Trainee or Consultant: ' + ${consultant.traineeOrConsultant} + '<br>'+
-            'Salon or Home: ' + ${consultant.salonOrHome} + '<br>'+
-            'Salon Name (if applicable): ' + ${consultant.salonName} + '<br>'
-        </P>
-    </div>
+
 
 </div>
 

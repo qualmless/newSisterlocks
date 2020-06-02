@@ -26,21 +26,27 @@
 <!--TODO: connect search-->
 <!--search form----------------------------------------------------------------------------------------------->
     <div th:fragment="search-form" class="my-form">
-    <form th:action="@{/search/results}" method = "post">
+    <form th:action="@{/search}" method = "post">
         <h2>Search by:</h2>
 
         <p>
-            <label for="consultant">Consultant</label>
+            <label for="consultantType">Consultant</label>
             <input type="checkbox"
-                   name="consultant"
-                   id="consultant"
-                   value="consultant"/>
+                   name="consultantType"
+                   id="consultantType"
+                   value="consultantType"/>
 
-            <label for="trainee">Trainee</label>
+            <label for="traineeType">Trainee</label>
             <input type="checkbox"
-                   name="trainee"
-                   id="trainee"
-                   value="trainee"/>
+                   name="traineeType"
+                   id="traineeType"
+                   value="traineeType"/>
+
+            <label for="anyType">Any</label>
+            <input type="checkbox"
+                   name="anyType"
+                   id="anyType"
+                   value="anyType"/>
 
             <label for="salonOnly">Salon Only</label>
             <input type="checkbox"
@@ -66,7 +72,6 @@
     </div>
 
 
-<!--TODO: make this fragment work or figure out how to list -->
 
 <!--consultant list-------------------------------------------------------------------------------------->
 
@@ -121,9 +126,9 @@
 <!--        </tr>-->
 
 <!--TODO: why won't this table format-->
-        <tr th:each="person : ${tableChoices.consultant}">
-            <td th:text="${tableChoices.name[0]}"></td> <!--//-->
-            <td th:text="${tableChoices.city[0]}"></td> <!--//-->
+        <tr th:each="person : ${tableChoices.consultants}">
+            <td th:text="${tableChoices.names[0]}"></td> <!--//-->
+            <td th:text="${tableChoices.cities[0]}"></td> <!--//-->
             <td th:text="${person.city}"></td> <!--//-->
             <td th:text="${person.state}"></td> <!--//-->
             <td th:text="${person.zipCode}"></td> <!--//-->
