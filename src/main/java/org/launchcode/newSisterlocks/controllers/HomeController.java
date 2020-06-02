@@ -22,11 +22,12 @@ public class HomeController {
 //    static SortedMap<String, Object> tableChoices = new TreeMap<>();
 
     public HomeController () {
-        columnChoices.put("name", "Consultant Name");
+        columnChoices.put("name", "Name");
         columnChoices.put("city", "City");
         columnChoices.put("state", "State");
         columnChoices.put("zipCode", "ZipCode");
 
+        tableChoices.put("consultant", ConsultantData.getAllConsultants());
         tableChoices.put("name", ConsultantData.getAllNames());
         tableChoices.put("city", ConsultantData.getAllCities());
         tableChoices.put("state", ConsultantData.getAllStates());
@@ -38,7 +39,7 @@ public class HomeController {
         model.addAttribute("columns", columnChoices);
         model.addAttribute("tableChoices", tableChoices);
         model.addAttribute("all",ConsultantData.findAll());
-        model.addAttribute("consultant", ConsultantData.getAllConsultants());
+        model.addAttribute("consultants", ConsultantData.getAllConsultants());
         model.addAttribute("names", ConsultantData.getAllNames());
         model.addAttribute("cities", ConsultantData.getAllCities());
         model.addAttribute("states", ConsultantData.getAllStates());

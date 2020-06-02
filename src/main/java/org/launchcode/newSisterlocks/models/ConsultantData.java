@@ -242,6 +242,7 @@ public class ConsultantData {
         return allCities;
     }
 
+
     public static ArrayList<State> getAllStates() {
         loadData();
         allStates.sort(new NameSorter());

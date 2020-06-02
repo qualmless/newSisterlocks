@@ -7,7 +7,7 @@ public class Consultant {
     private int id;
     private static int nextId = 1;
 
-    private String name;
+    public String name;
     private String address;
     private String city;
     private String state;

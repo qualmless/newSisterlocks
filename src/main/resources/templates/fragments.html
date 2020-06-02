@@ -72,13 +72,14 @@
 
     <table th:fragment="list-consultants-results" class="centeredTable consultants-table-index">
         <tr>
-            <!--TODO: why are the headers in the wrong order -->
-            <th:block th:each="column : ${columns}">
-                <th th:text = "${column.value}"></th>
-            </th:block>
+            <th>Name</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+<!--            <th:block th:each="column : ${columns}">-->
+<!--                <th th:text = "${column.value}"></th>-->
+<!--            </th:block>-->
         </tr>
-
-            <!--TODO: figure out the format for the table so it's not a list-->
 
 <!--individual cells but the wrong number-->
 <!--        <tr th:each="category : ${tableChoices}">-->
@@ -114,16 +115,21 @@
 
 <!--each row prints all names but they're all the same so that's good-->
 <!--        <tr th:each="name : ${tableChoices.name}">-->
-<!--            <td th:each="item : ${tableChoices}" th:text="${name.value}"></td> &lt;!&ndash;//this makes all names&ndash;&gt;-->
-<!--            <td th:each="item : ${tableChoices}" th:text="${city.value}"></td>-->
-<!--            <td th:each="item : ${name}" th:text="${city}"></td>-->
+<!--            <td th:each="item : ${tableChoices}" th:text="${name}"></td> &lt;!&ndash;//this makes all names&ndash;&gt;-->
+<!--&lt;!&ndash;            <td th:each="item : ${tableChoices}" th:text="${city}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td th:each="item : ${name}" th:text="${city}"></td>&ndash;&gt;-->
 <!--        </tr>-->
 
-        <tr th:each="name : ${tableChoices.name}">
-            <td th:each="name : ${name}" th:text="${name.value}"></td> <!--//THIS IS PERFECT. DON'T CHANGE-->
-            <td th:each="city : ${tableChoices.city}" th:text="${city.value}"></td> <!--//this makes all cities-->
-            <td th:each="state : ${tableChoices.state}" th:text="${state.value}"></td> <!--//this makes all states-->
-            <td th:each="zipCode : ${tableChoices.zipCode}" th:text="${zipCode.value}"></td> <!--//this makes all zips-->
+<!--TODO: why won't this table format-->
+        <tr th:each="person : ${tableChoices.consultant}">
+            <td th:text="${tableChoices.name[0]}"></td> <!--//-->
+            <td th:text="${tableChoices.city[0]}"></td> <!--//-->
+            <td th:text="${person.city}"></td> <!--//-->
+            <td th:text="${person.state}"></td> <!--//-->
+            <td th:text="${person.zipCode}"></td> <!--//-->
+<!--            <td th:each="item : ${consultant}" th:text="${item.value}"></td> &lt;!&ndash;//&ndash;&gt;-->
+<!--            <td th:each="state : ${tableChoices.state}" th:text="${state.value}"></td> &lt;!&ndash;//this makes all states&ndash;&gt;-->
+<!--            <td th:each="zipCode : ${tableChoices.zipCode}" th:text="${zipCode.value}"></td> &lt;!&ndash;//this makes all zips&ndash;&gt;-->
         </tr>
 
         
