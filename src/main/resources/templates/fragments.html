@@ -23,7 +23,6 @@
         </div>
     </div>
 
-<!--TODO: connect search-->
 <!--search form----------------------------------------------------------------------------------------------->
     <div th:fragment="search-form" class="my-form">
     <form th:action="@{/search}" method = "post">
@@ -85,9 +84,15 @@
             <th>City</th>
             <th>State</th>
             <th>Zip</th>
-<!--            <th:block th:each="column : ${columns}">-->
-<!--                <th th:text = "${column.value}"></th>-->
-<!--            </th:block>-->
+        </tr>
+
+        <tr th:each="person : ${tableChoices.consultants}">
+            <td th:each="item : ${person.name}">
+                <a th:text="${person.name}"></a>
+            </td>
+            <td th:text="${person.city}"></td>
+            <td th:text="${person.state}"></td>
+            <td th:text="${person.zipCode}"></td>
         </tr>
 
 <!--individual cells but the wrong number-->
@@ -103,7 +108,7 @@
 <!--                <a th:href="@{/list/consultants(column=${category.key},value=${item})}" th:text="${tableChoices.name}"></a>-->
 <!--            </td>-->
 <!--            <td th:text="${tableChoices.city}"></td>-->
-<!--        </tr>        -->
+<!--        </tr>-->
 
 <!--        one name prints but just the one-->
 <!--        <tr th:each="name : ${tableChoices.name}">-->
@@ -129,18 +134,16 @@
 <!--&lt;!&ndash;            <td th:each="item : ${name}" th:text="${city}"></td>&ndash;&gt;-->
 <!--        </tr>-->
 
-<!--TODO: why won't this table format-->
-        <tr th:each="person : ${tableChoices.consultants}">
-            <td th:text="${tableChoices.names[0]}"></td> <!--//-->
-            <td th:text="${tableChoices.cities[0]}"></td> <!--//-->
-            <td th:text="${tableChoices.states[0]}"></td> <!--//-->
-            <td th:text="${tableChoices.zipCodes[0]}"></td> <!--//-->
+
+<!--            <td>-->
+<!--                <a th:href="@{/list/consultants(column=${category.key},value=${name})}" th:text="${person.name}">-->
+<!--            </td>-->
 <!--            <td th:text="${person.state}"></td> &lt;!&ndash;//&ndash;&gt;-->
 <!--            <td th:text="${person.zipCode}"></td> &lt;!&ndash;//&ndash;&gt;-->
 <!--            <td th:each="item : ${consultant}" th:text="${item.value}"></td> &lt;!&ndash;//&ndash;&gt;-->
 <!--            <td th:each="state : ${tableChoices.state}" th:text="${state.value}"></td> &lt;!&ndash;//this makes all states&ndash;&gt;-->
 <!--            <td th:each="zipCode : ${tableChoices.zipCode}" th:text="${zipCode.value}"></td> &lt;!&ndash;//this makes all zips&ndash;&gt;-->
-        </tr>
+
 
         
     </table>

@@ -7,7 +7,7 @@ public class Consultant {
     private int id;
     private static int nextId = 1;
 
-    public String name;
+    private String name;
     private String address;
     private String city;
     private String state;
@@ -27,16 +27,15 @@ public class Consultant {
 
     // Initialize the id and value fields.
     public Consultant(String name,
-               String address,
-               String city,
-               String state,
-               String zipCode,
-               String phoneNumber,
-               String email,
-               String salonOrHome,
-               String salonName) {
-        //TODO: can't add consultantLevel initialization
-        this();
+                      String address,
+                      String city,
+                      String state,
+                      String zipCode,
+                      String phoneNumber,
+                      String email,
+                      String salonOrHome,
+                      String salonName,
+                      String consultantLevel) {
         this.name=name;
         this.address=address;
         this.city=city;
@@ -46,19 +45,7 @@ public class Consultant {
         this.email=email;
         this.salonOrHome=salonOrHome;
         this.salonName=salonName;
-    }
-
-    public Consultant(String aName,
-                      String anAddress,
-                      String aCity,
-                      String aState,
-                      String aZipCode,
-                      String aPhoneNumber,
-                      String anEmail,
-                      String betweenSalonOrHome,
-                      String aSalonName,
-                      String aConsultantLevel) {
-
+        this.consultantLevel=consultantLevel;
     }
 
 

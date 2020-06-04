@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import static org.launchcode.newSisterlocks.controllers.HomeController.columnChoices;
+import static org.launchcode.newSisterlocks.controllers.HomeController.tableChoices;
 
 import java.util.ArrayList;
 
@@ -18,6 +19,7 @@ public class SearchController {
     @RequestMapping(value = "")
     public String search(Model model) {
         model.addAttribute("columns", columnChoices);
+        model.addAttribute("tableChoices", tableChoices);
         return "search";
     }
 
@@ -25,7 +27,7 @@ public class SearchController {
 
 // TODO: add google api
 
-// TODO: search maps wrong but it maps!
+// TODO: make search respond to actual data
 
     @PostMapping(value = "search")
     public String displaySearchResults(Model model,
@@ -33,6 +35,7 @@ public class SearchController {
                                        //i think this should be radius but i don't know how
                                        @RequestParam String searchType*/){
         model.addAttribute("columns", columnChoices);
+        model.addAttribute("tableChoices", tableChoices);
         ArrayList<Consultant> consultants;
 //        if (searchTerm.toLowerCase().equals("all") || searchTerm.toLowerCase().equals("")) {
 //            jobs=JobData.findAll();

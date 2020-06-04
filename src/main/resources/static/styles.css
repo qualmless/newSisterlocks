@@ -9,6 +9,7 @@ table, th, tr, td {
 
 .consultants-table-index {
     margin-right: 5%;
+    width: 100%;
 }
 
 .left-side {
@@ -21,9 +22,18 @@ table, th, tr, td {
 
 .consultant-details {
     float: left;
-    margin: 0;
+    margin-left: 5%;
 }
 
 .body-content {
     padding: 2%;
+}
+
+.google-box {
+    padding: 60px;
+    background: blue;
+    border: 2px solid;
+    height: 100%;
+    width: 100%;
+    float: right;
 }
