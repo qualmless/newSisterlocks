@@ -6,6 +6,9 @@
 <head th:fragment="head">
     <!-- Bootstrap stylesheets and script -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link th:href="@{styles.css}" rel="stylesheet" />
 </head>
 
@@ -84,16 +87,52 @@
             <th>City</th>
             <th>State</th>
             <th>Zip</th>
+<!--            <th></th>-->
         </tr>
 
-        <tr th:each="person : ${tableChoices.consultants}">
-            <td th:each="item : ${person.name}">
-                <a th:text="${person.name}"></a>
-            </td>
-            <td th:text="${person.city}"></td>
-            <td th:text="${person.state}"></td>
-            <td th:text="${person.zipCode}"></td>
-        </tr>
+<!--        <tr th:each="person : ${tableChoices.consultants}" >-->
+<!--            <td th:each="item : ${person.name}">-->
+<!--                <a th:text="${person.name}"></a>-->
+<!--            </td>-->
+<!--            <td th:text="${person.city}"></td>-->
+<!--            <td th:text="${person.state}"></td>-->
+<!--            <td th:text="${person.zipCode}"></td>-->
+<!--            <td><button type="button" class="collapsible" data-toggle="collapse" data-target=".collapse-row">Details</button></td>-->
+
+<!--        </tr>-->
+<!--        <tr class="collapse-row collapse">-->
+<!--            <td>-->
+<!--                some more info-->
+<!--            </td>-->
+<!--        </tr>-->
+
+        <th:block th:each="person: ${tableChoices.consultants}">
+            <tr th:attr="data-target='#accordion_'+${person.name}" data-toggle="collapse" class="accordion-toggle">
+                <td th:text="${person.name}"></td>
+                <td th:text="${person.city}"></td>
+                <td th:text="${person.state}"></td>
+                <td th:text="${person.zipCode}"></td>
+                <td><button type="button" class="accordion-toggle" data-toggle="collapse" data-target="#accordion_'+${person.name}">Details</button></td>
+            </tr>
+            <tr>
+                <td colspan="4" class="hiddenRow">
+                    <div class="accordion-body collapse" th:id="'#accordion_'+${person.name}">there is nothing to see here (yet)</div>
+                </td>
+            </tr>
+        </th:block>
+
+
+<!--        <th:block th:each="result: ${results}">-->
+<!--            <tr th:attr="data-target='#accordion_'+${result.name}" data-toggle="collapse" class="accordion-toggle">-->
+<!--                <td th:text="${result.name}"></td>-->
+<!--                <td th:text="${result.value}"></td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td colspan="6" class="hiddenRow">-->
+<!--                    <div class="accordion-body collapse" th:id="'#accordion_'+${result.name}">there is nothing to see here (yet)</div>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--        </th:block>-->
 
 <!--individual cells but the wrong number-->
 <!--        <tr th:each="category : ${tableChoices}">-->

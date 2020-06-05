@@ -3,9 +3,9 @@ table, th, tr, td {
     padding: 10px;
 }
 
-.my-form {
+/*.my-form {
     padding: 60px 0 40px 0;
-}
+}*/
 
 .consultants-table-index {
     margin-right: 5%;
@@ -36,4 +36,17 @@ table, th, tr, td {
     height: 100%;
     width: 100%;
     float: right;
+}
+
+.hiddenRow{
+  display: none;
+  overflow: hidden;
+
+}
+
+.collapse-row {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
 }
