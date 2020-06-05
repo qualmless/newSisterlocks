@@ -3,9 +3,11 @@ table, th, tr, td {
     padding: 10px;
 }
 
-/*.my-form {
-    padding: 60px 0 40px 0;
-}*/
+.my-form {
+    /*padding: 60px 0 40px 0;*/
+    grid-template-columns: auto auto;
+    grid-column-gap: 1%;
+}
 
 .consultants-table-index {
     margin-right: 5%;
@@ -36,11 +38,12 @@ table, th, tr, td {
 }
 
 .google-box {
-    padding: 60px;
+    padding: 0 60px 60px 60px;
     background: blue;
     border: 2px solid;
     height: 100%;
     width: 100%;
+    color: white;
 
 }
 

@@ -29,61 +29,62 @@
 
 <!--search form----------------------------------------------------------------------------------------------->
     <div th:fragment="search-form" class="my-form">
-    <form th:action="@{/search}" method = "post" th:object="${searchForm}">
-        <h2>Search by:</h2>
+        <form th:action="@{/search}" method = "post" th:object="${searchForm}">
+            <h2>Search by:</h2>
 
-        <p>
-            <label for="consultantType">Consultant Only</label>
-            <input type="radio"
-                   name="consultantType"
-                   id="consultantType"
-                   value="consultantType"/>
-<!--            <br>-->
-
-            <label for="traineeType">Trainee Only</label>
-            <input type="radio"
-                   name="consultantType"
-                   id="traineeType"
-                   value="traineeType"/>
-<!--            <br>-->
-
-            <label for="anyType">Any</label>
-            <input type="radio"
-                   name="consultantType"
-                   id="anyType"
-                   value="anyType"/>
-
+            <p>
+                <div>
+                    <input type="radio"
+                           name="consultantType"
+                           id="consultantType"
+                           value="consultantType"/>
+                    <label for="consultantType">Consultant Only</label>
             <br>
-            <label for="salonOnly">Salon Only</label>
-            <input type="checkbox"
-                   name="salonOnly"
-                   id="salonOnly"
-                   th:field="*{salonOnly}"/>
-            <!--            <br>-->
-            <!--TODO: adding th:field here makes value true and checked-->
-            <label for="zipCode">Zip Code:</label>
-            <input type="text"
-                   name="zipCode"
-                   id="zipCode"
-                   maxlength="5"
-                   size="8"
-                   th:field="*{zipCode}"/>
-<!--            <br>-->
-            <label for="radius">Radius: </label>
-            <select id = "radius"
-                    th:field="*{radius}">
-                <option value = "5">5 miles</option>
-                <option value = "10">10 miles</option>
-                <option value = "20">20 miles</option>
-                <option value = "50">50 miles</option>
-                <option value = "100">100 miles</option>
-                <option value = "any">Any distance</option>
-            </select>
+                    <input type="radio"
+                           name="consultantType"
+                           id="traineeType"
+                           value="traineeType"/>
+                    <label for="traineeType">Trainee Only</label>
+            <br>
 
-        <input type="submit" value="Search" />
-        </p>
+                    <input type="radio"
+                           name="consultantType"
+                           id="anyType"
+                           value="anyType"/>
+                    <label for="anyType">Any</label>
+                </div>
+                <div>
+                    <input type="checkbox"
+                           name="salonOnly"
+                           id="salonOnly"
+                           th:field="*{salonOnly}"/>
+                    <label for="salonOnly">Salon Only</label>
+            <br>
+                    <!--TODO: adding th:field here makes value true and checked-->
+                    <label for="zipCode">Zip Code:</label>
+                    <input type="text"
+                           name="zipCode"
+                           id="zipCode"
+                           maxlength="5"
+                           size="8"
+                           th:field="*{zipCode}"/>
+            <br>
+                    <label for="radius">Radius: </label>
+                    <select id = "radius"
+                            th:field="*{radius}">
+                        <option value = "5">5 miles</option>
+                        <option value = "10">10 miles</option>
+                        <option value = "20">20 miles</option>
+                        <option value = "50">50 miles</option>
+                        <option value = "100">100 miles</option>
+                        <option value = "any">Any distance</option>
+                    </select>
 
-    </form>
+                <input type="submit" value="Search" />
+            </div>
+            </p>
+
+        </form>
     </div>
 
 
