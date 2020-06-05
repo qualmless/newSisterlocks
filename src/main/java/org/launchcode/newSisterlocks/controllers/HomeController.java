@@ -3,6 +3,7 @@ package org.launchcode.newSisterlocks.controllers;
 
 import org.launchcode.newSisterlocks.models.Consultant;
 import org.launchcode.newSisterlocks.models.ConsultantData;
+import org.launchcode.newSisterlocks.models.SearchForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,8 @@ public class HomeController {
     static SortedMap<String, String> columnChoices = new TreeMap<>();
     static HashMap<String, Object> tableChoices = new HashMap<>();
 //    static SortedMap<String, Object> tableChoices = new TreeMap<>();
+
+    private Object searchForm;
 
     public HomeController () {
         columnChoices.put("name", "Name");

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
     <link th:href="@{styles.css}" rel="stylesheet" />
 </head>
 
@@ -28,7 +29,7 @@
 
 <!--search form----------------------------------------------------------------------------------------------->
     <div th:fragment="search-form" class="my-form">
-    <form th:action="@{/search}" method = "post">
+    <form th:action="@{/search}" method = "post" th:object="${searchForm}">
         <h2>Search by:</h2>
 
         <p>
@@ -51,18 +52,26 @@
                    name="consultantType"
                    id="anyType"
                    value="anyType"/>
-<!--            <br>-->
+
+            <br>
             <label for="salonOnly">Salon Only</label>
             <input type="checkbox"
                    name="salonOnly"
                    id="salonOnly"
-                   value="salonOnly"/>
-<!--            <br>-->
+                   th:field="*{salonOnly}"/>
+            <!--            <br>-->
+            <!--TODO: adding th:field here makes value true and checked-->
             <label for="zipCode">Zip Code:</label>
-            <input type="text" name="zipCode" id="zipCode" maxlength="5" size="8"/>
+            <input type="text"
+                   name="zipCode"
+                   id="zipCode"
+                   maxlength="5"
+                   size="8"
+                   th:field="*{zipCode}"/>
 <!--            <br>-->
             <label for="radius">Radius: </label>
-            <select id = "radius">
+            <select id = "radius"
+                    th:field="*{radius}">
                 <option value = "5">5 miles</option>
                 <option value = "10">10 miles</option>
                 <option value = "20">20 miles</option>
@@ -81,14 +90,14 @@
 
 <!--consultant list-------------------------------------------------------------------------------------->
 
-    <table th:fragment="list-consultants-results" class="centeredTable consultants-table-index">
-        <tr>
+    <table id="selectedColumn" th:fragment="list-consultants-results" class="centeredTable consultants-table-index">
+        <thead>
             <th>Name</th>
             <th>City</th>
             <th>State</th>
             <th>Zip</th>
             <th></th>
-        </tr>
+        </thead>
 
 <!--        <tr th:each="person : ${tableChoices.consultants}" >-->
 <!--            <td th:each="item : ${person.name}">-->
@@ -131,6 +140,13 @@
                 </td>
             </tr>
         </th:block>
+        <tfoot>
+        <th>Name</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+        <th></th>
+        </tfoot>
 
 
 <!--        <th:block th:each="result: ${results}">-->

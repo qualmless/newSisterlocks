@@ -17,12 +17,13 @@ import java.util.ArrayList;
 public class SearchController {
 
     @RequestMapping(value = "")
-    public String search(Model model) {
+    public String search(SearchForm searchForm,
+                         Model model) {
         model.addAttribute("columns", columnChoices);
         model.addAttribute("tableChoices", tableChoices);
+        model.addAttribute("searchForm", searchForm);
         return "search";
     }
-
 
 
 // TODO: add google api
@@ -31,11 +32,13 @@ public class SearchController {
 
     @PostMapping(value = "search")
     public String displaySearchResults(Model model,
+                                       SearchForm searchForm,
                                        @RequestParam String zipCode/*,
                                        //i think this should be radius but i don't know how
                                        @RequestParam String searchType*/){
         model.addAttribute("columns", columnChoices);
         model.addAttribute("tableChoices", tableChoices);
+        model.addAttribute("searchForm", searchForm);
         ArrayList<Consultant> consultants;
 //        if (searchTerm.toLowerCase().equals("all") || searchTerm.toLowerCase().equals("")) {
 //            jobs=JobData.findAll();

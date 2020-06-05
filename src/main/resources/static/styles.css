@@ -13,7 +13,7 @@ table, th, tr, td {
 }
 
 .left-side {
-    float: left;
+
 }
 
 .navbar ul li {
@@ -23,6 +23,12 @@ table, th, tr, td {
 .consultant-details {
     float: left;
     margin-left: 5%;
+}
+
+.consultant-and-google{
+    display: grid;
+    grid-template-columns: 30% auto;
+    grid-column-gap: 3%;
 }
 
 .body-content {
@@ -35,7 +41,7 @@ table, th, tr, td {
     border: 2px solid;
     height: 100%;
     width: 100%;
-    float: left;
+
 }
 
 .hiddenRow, #accordion{
@@ -49,4 +55,17 @@ table, th, tr, td {
   display: none;
   overflow: hidden;
   background-color: #f1f1f1;
+}
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+bottom: .5em;
 }
