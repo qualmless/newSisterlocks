@@ -38,7 +38,7 @@ table, th, tr, td {
     float: right;
 }
 
-.hiddenRow{
+.hiddenRow, #accordion{
   display: none;
   overflow: hidden;
 

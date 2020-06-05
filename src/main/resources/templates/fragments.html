@@ -87,7 +87,7 @@
             <th>City</th>
             <th>State</th>
             <th>Zip</th>
-<!--            <th></th>-->
+            <th></th>
         </tr>
 
 <!--        <tr th:each="person : ${tableChoices.consultants}" >-->
@@ -112,11 +112,22 @@
                 <td th:text="${person.city}"></td>
                 <td th:text="${person.state}"></td>
                 <td th:text="${person.zipCode}"></td>
-                <td><button type="button" class="accordion-toggle" data-toggle="collapse" data-target="#accordion_'+${person.name}">Details</button></td>
+                <td><button type="button" href="#" class="accordion-toggle" data-toggle="collapse" data-target="#accordion_'+${person.name}">Details</button></td>
             </tr>
             <tr>
-                <td colspan="4" class="hiddenRow">
-                    <div class="accordion-body collapse" th:id="'#accordion_'+${person.name}">there is nothing to see here (yet)</div>
+                <td colspan="5"> <!--class="hiddenRow"-->
+                    <div th:utext=" 'Name: ' + ${person.name} + '<br>' +
+                'Phone Number: ' + ${person.phoneNumber} + '<br>'+
+                'Email: ' + ${person.email} + '<br>'+
+                'Address: ' + ${person.address} + '<br>'+
+                'City: ' + ${person.city} + '<br>'+
+                'State: ' + ${person.state} + '<br>'+
+                'Zip: ' + ${person.zipCode} + '<br>' +
+                'Consultant Level: ' + ${person.consultantLevel} + '<br>' +
+                'Salon or Home: ' + ${person.salonOrHome} + '<br>'+
+                'Salon Name (if applicable): ' + ${person.salonName} + '<br>'"> <!--class="accordion-body collapse" th:id="'#accordion_'+${person.name}"-->
+<!--                        there is nothing to see here (yet)-->
+                    </div>
                 </td>
             </tr>
         </th:block>
@@ -195,19 +206,16 @@
 
 <!--table of consultants fragment-->
 <!--    <table th:fragment="list-consultants-loop" class="consultant-listing" >-->
-<!--        <tr th:each="consultant : ${allConsultants}">-->
-<!--            <td th:utext="-->
-<!--            'ID: ' + ${consultant.id} + '<br>'+-->
-<!--            'Name: ' + ${consultant.name} + '<br>'+-->
-<!--            'Phone Number: ' + ${consultant.phoneNumber} + '<br>'+-->
-<!--            'Email: ' + ${consultant.email} + '<br>'+-->
-<!--            'Address: ' + ${consultant.address} + '<br>'+-->
-<!--            'City: ' + ${consultant.city} + '<br>'+-->
-<!--            'State: ' + ${consultant.state} + '<br>'+-->
-<!--            'Zip: ' + ${consultant.zip} + '<br>'+-->
-<!--            'Trainee or Consultant: ' + ${consultant.traineeOrConsultant} + '<br>'+-->
-<!--            'Salon or Home: ' + ${consultant.salonOrHome} + '<br>'+-->
-<!--            'Salon Name (if applicable): ' + ${consultant.salonName} + '<br>'"></td>-->
+<!--        <tr th:each="'Name: ' + ${person.name} + '<br>'+-->
+<!--                'Phone Number: ' + ${person.phoneNumber} + '<br>'+-->
+<!--                'Email: ' + ${person.email} + '<br>'+-->
+<!--                'Address: ' + ${person.address} + '<br>'+-->
+<!--                'City: ' + ${person.city} + '<br>'+-->
+<!--                'State: ' + ${person.state} + '<br>'+-->
+<!--                'Zip: ' + ${person.zipCode} + '<br>'+-->
+<!--                'Consultant Level: ' + ${person.consultantLevel} + '<br>'+-->
+<!--                'Salon or Home: ' + ${person.salonOrHome} + '<br>'+-->
+<!--                'Salon Name (if applicable): ' + ${person.salonName} + '<br>'"></td>-->
 <!--        </tr>-->
 
 <!--    </table>-->

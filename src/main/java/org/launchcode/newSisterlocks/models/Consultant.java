@@ -139,4 +139,12 @@ public class Consultant {
     public void setSalonName(String salonName) {
         this.salonName = salonName;
     }
+
+    public String getConsultantLevel() {
+        return consultantLevel;
+    }
+
+    public void setConsultantLevel(String consultantLevel) {
+        this.consultantLevel = consultantLevel;
+    }
 }

@@ -7,35 +7,57 @@
 <div th:replace="fragments :: page-header"></div>
 
 <div class="body-content">
+    <div th:replace="fragments :: search-form"></div>
+    <div class="">
+        <div class="left-side">
 
-    <div class="left-side">
 
-        <div th:replace="fragments :: search-form"></div>
+            <h2>Consultants results:</h2>
+            <p>(click to expand details)</p>
 
-        <h2>Consultants results:</h2>
-        <p>(click to expand details)</p>
+            <!--TABLE OF RESULTS------------------------------------------------------------------------------------------>
+            <table th:replace="fragments::list-consultants-results"></table>
+        </div>
 
-<!--TABLE OF RESULTS------------------------------------------------------------------------------------------>
-        <table th:replace="fragments::list-consultants-results"></table>
+        <!--TODO: add details-->
+        <!--TODO: make details alive when clicked. javascript?-->
+        <div class="consultant-details">
+            <h2>Consultant Details (when clicked)</h2>
+            <p>'Name: ' + ${consultant.name} + '<br>'+
+                'Phone Number: ' + ${consultant.phoneNumber} + '<br>'+
+                'Email: ' + ${consultant.email} + '<br>'+
+                'Address: ' + ${consultant.address} + '<br>'+
+                'City: ' + ${consultant.city} + '<br>'+
+                'State: ' + ${consultant.state} + '<br>'+
+                'Zip: ' + ${consultant.zipCode} + '<br>'+
+                'Consultant Level: ' + ${consultant.consultantLevel} + '<br>'+
+                'Salon or Home: ' + ${consultant.salonOrHome} + '<br>'+
+                'Salon Name (if applicable): ' + ${consultant.salonName} + '<br>'
+            </p>
+
+            <!--            <p th:utext="-->
+            <!--                'Name: ' + ${consultant.name} + '<br>'+-->
+            <!--                'Phone Number: ' + ${consultant.phoneNumber} + '<br>'+-->
+            <!--                'Email: ' + ${consultant.email} + '<br>'+-->
+            <!--                'Address: ' + ${consultant.address} + '<br>'+-->
+            <!--                'City: ' + ${consultant.city} + '<br>'+-->
+            <!--                'State: ' + ${consultant.state} + '<br>'+-->
+            <!--                'Zip: ' + ${consultant.zipCode} + '<br>'+-->
+            <!--                'Consultant Level: ' + ${consultant.consultantLevel} + '<br>'+-->
+            <!--                'Salon or Home: ' + ${consultant.salonOrHome} + '<br>'+-->
+            <!--                'Salon Name (if applicable): ' + ${consultant.salonName} + '<br>'">-->
+            <!--            </p>-->
+
+
+        </div>
+
+        <div class="google-box">
+            google square
+        </div>
 
     </div>
-
-    <div class="consultant-details">
-        <h2>Consultant Details (when clicked)</h2>
-        <P>
-            'Name: ' + ${consultant.name} + '<br>'+
-            'Phone Number: ' + ${consultant.phoneNumber} + '<br>'+
-            'Email: ' + ${consultant.email} + '<br>'+
-            'Address: ' + ${consultant.address} + '<br>'+
-            'City: ' + ${consultant.city} + '<br>'+
-            'State: ' + ${consultant.state} + '<br>'+
-            'Zip: ' + ${consultant.zip} + '<br>'+
-            'Trainee or Consultant: ' + ${consultant.traineeOrConsultant} + '<br>'+
-            'Salon or Home: ' + ${consultant.salonOrHome} + '<br>'+
-            'Salon Name (if applicable): ' + ${consultant.salonName} + '<br>'
-        </P>
-    </div>
-
+</div>
 
 </body>
+
 </html>
