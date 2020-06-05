@@ -35,7 +35,7 @@ table, th, tr, td {
     border: 2px solid;
     height: 100%;
     width: 100%;
-    float: right;
+    float: left;
 }
 
 .hiddenRow, #accordion{

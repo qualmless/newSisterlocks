@@ -11,49 +11,23 @@
     <div class="">
         <div class="left-side">
 
+            <div>
+                <h2>Consultants results:</h2>
+                <p>(click name to expand details)</p>
 
-            <h2>Consultants results:</h2>
-            <p>(click to expand details)</p>
+                <!--TABLE OF RESULTS------------------------------------------------------------------------------------------>
+                <table th:replace="fragments::list-consultants-results"></table>
+            </div>
 
-            <!--TABLE OF RESULTS------------------------------------------------------------------------------------------>
-            <table th:replace="fragments::list-consultants-results"></table>
+
+            <div class="google-box">
+                google square
+            </div>
         </div>
 
-        <!--TODO: add details-->
         <!--TODO: make details alive when clicked. javascript?-->
-        <div class="consultant-details">
-            <h2>Consultant Details (when clicked)</h2>
-            <p>'Name: ' + ${consultant.name} + '<br>'+
-                'Phone Number: ' + ${consultant.phoneNumber} + '<br>'+
-                'Email: ' + ${consultant.email} + '<br>'+
-                'Address: ' + ${consultant.address} + '<br>'+
-                'City: ' + ${consultant.city} + '<br>'+
-                'State: ' + ${consultant.state} + '<br>'+
-                'Zip: ' + ${consultant.zipCode} + '<br>'+
-                'Consultant Level: ' + ${consultant.consultantLevel} + '<br>'+
-                'Salon or Home: ' + ${consultant.salonOrHome} + '<br>'+
-                'Salon Name (if applicable): ' + ${consultant.salonName} + '<br>'
-            </p>
-
-            <!--            <p th:utext="-->
-            <!--                'Name: ' + ${consultant.name} + '<br>'+-->
-            <!--                'Phone Number: ' + ${consultant.phoneNumber} + '<br>'+-->
-            <!--                'Email: ' + ${consultant.email} + '<br>'+-->
-            <!--                'Address: ' + ${consultant.address} + '<br>'+-->
-            <!--                'City: ' + ${consultant.city} + '<br>'+-->
-            <!--                'State: ' + ${consultant.state} + '<br>'+-->
-            <!--                'Zip: ' + ${consultant.zipCode} + '<br>'+-->
-            <!--                'Consultant Level: ' + ${consultant.consultantLevel} + '<br>'+-->
-            <!--                'Salon or Home: ' + ${consultant.salonOrHome} + '<br>'+-->
-            <!--                'Salon Name (if applicable): ' + ${consultant.salonName} + '<br>'">-->
-            <!--            </p>-->
 
 
-        </div>
-
-        <div class="google-box">
-            google square
-        </div>
 
     </div>
 </div>
