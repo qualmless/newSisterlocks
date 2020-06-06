@@ -4,6 +4,7 @@ import org.launchcode.newSisterlocks.models.*;
 import org.launchcode.newSisterlocks.models.ConsultantData;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,11 +18,10 @@ import java.util.ArrayList;
 public class SearchController {
 
     @RequestMapping(value = "")
-    public String search(SearchForm searchForm,
-                         Model model) {
+    public String search(Model model) {
         model.addAttribute("columns", columnChoices);
         model.addAttribute("tableChoices", tableChoices);
-        model.addAttribute("searchForm", searchForm);
+        model.addAttribute(new SearchForm());
         return "search";
     }
 
@@ -32,20 +32,19 @@ public class SearchController {
 
     @PostMapping(value = "search")
     public String displaySearchResults(Model model,
-                                       SearchForm searchForm,
-                                       @RequestParam String zipCode/*,
+                                       @ModelAttribute("searchForm") SearchForm searchForm
+                                        /*,
                                        //i think this should be radius but i don't know how
                                        @RequestParam String searchType*/){
         model.addAttribute("columns", columnChoices);
         model.addAttribute("tableChoices", tableChoices);
-        model.addAttribute("searchForm", searchForm);
         ArrayList<Consultant> consultants;
 //        if (searchTerm.toLowerCase().equals("all") || searchTerm.toLowerCase().equals("")) {
 //            jobs=JobData.findAll();
 //            model.addAttribute("title", "All Jobs");
 //        }
-        consultants = ConsultantData.findByColumnAndValue(/*radius,*/ zipCode);
-        model.addAttribute("title", "Consultants within 6 miles of Zip Code: " + zipCode);
+        consultants = ConsultantData.findByColumnAndValue(/*radius,*/ searchForm.getZipCode());
+        model.addAttribute("title", "Consultants within 6 miles of Zip Code: " + searchForm.getZipCode());
         model.addAttribute("consultants", consultants);
         return "index";
     }

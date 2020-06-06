@@ -22,7 +22,7 @@ public class HomeController {
     static HashMap<String, Object> tableChoices = new HashMap<>();
 //    static SortedMap<String, Object> tableChoices = new TreeMap<>();
 
-    private Object searchForm;
+    private SearchForm searchForm = new SearchForm();
 
     public HomeController () {
         columnChoices.put("name", "Name");

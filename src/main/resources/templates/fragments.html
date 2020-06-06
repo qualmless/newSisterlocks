@@ -31,8 +31,7 @@
     <div th:fragment="search-form" class="my-form">
         <form th:action="@{/search}" method = "post" th:object="${searchForm}">
             <h2>Search by:</h2>
-
-            <p>
+            <div class="form-holder">
                 <div>
                     <input type="radio"
                            name="consultantType"
@@ -81,8 +80,8 @@
                     </select>
 
                 <input type="submit" value="Search" />
+                </div>
             </div>
-            </p>
 
         </form>
     </div>
@@ -130,9 +129,7 @@
                                     'Phone Number: ' + ${person.phoneNumber} + '<br>'+
                                     'Email: ' + ${person.email} + '<br>'+
                                     'Address: ' + ${person.address} + '<br>'+
-                                    'City: ' + ${person.city} + '<br>'+
-                                    'State: ' + ${person.state} + '<br>'+
-                                    'Zip: ' + ${person.zipCode} + '<br>' +
+                                    ${person.city} + ', ' + ${person.state} + ' ' + ${person.zipCode} + '<br>' +
                                     'Consultant Level: ' + ${person.consultantLevel} + '<br>' +
                                     'Salon or Home: ' + ${person.salonOrHome} + '<br>'+
                                     'Salon Name (if applicable): ' + ${person.salonName} + '<br>'">

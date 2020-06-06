@@ -5,6 +5,9 @@ table, th, tr, td {
 
 .my-form {
     /*padding: 60px 0 40px 0;*/
+}
+
+.form-holder {
     grid-template-columns: auto auto;
     grid-column-gap: 1%;
 }
