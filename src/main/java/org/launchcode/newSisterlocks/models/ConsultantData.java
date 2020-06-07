@@ -49,7 +49,7 @@ public class ConsultantData {
      * @param value Value of the field to search for.
      * @return List of all consultants matching the criteria.
      */
-    public static ArrayList<Consultant> findByColumnAndValue(String column/*, String value*/) {
+    public static ArrayList<Consultant> findByColumnAndValue(String column, String value) {
 
         // load data, if not already loaded
 
@@ -58,9 +58,9 @@ public class ConsultantData {
 
         ArrayList<Consultant> consultants = new ArrayList<>();
 
-//        if (value.toLowerCase().equals("all")){
-//            return findAll();
-//        }
+        if (value.equals("")){
+            return findAll();
+        }
 
 //        if (column.equals("all")){
 //            consultants = findByValue(value);

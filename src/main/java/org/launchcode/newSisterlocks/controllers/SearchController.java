@@ -32,19 +32,23 @@ public class SearchController {
 
     @PostMapping(value = "search")
     public String displaySearchResults(Model model,
-                                       @ModelAttribute("searchForm") SearchForm searchForm
-                                        /*,
+                                       String consultantType,
+                                       Boolean salonOnly,
+                                       String zipCode,
+                                       String radius/*,
                                        //i think this should be radius but i don't know how
                                        @RequestParam String searchType*/){
         model.addAttribute("columns", columnChoices);
         model.addAttribute("tableChoices", tableChoices);
         ArrayList<Consultant> consultants;
-//        if (searchTerm.toLowerCase().equals("all") || searchTerm.toLowerCase().equals("")) {
-//            jobs=JobData.findAll();
-//            model.addAttribute("title", "All Jobs");
-//        }
-        consultants = ConsultantData.findByColumnAndValue(/*radius,*/ searchForm.getZipCode());
-        model.addAttribute("title", "Consultants within 6 miles of Zip Code: " + searchForm.getZipCode());
+
+        if (zipCode.equals("")) {
+            consultants=ConsultantData.findAll();
+            model.addAttribute("title", "All Consultants");
+        }
+
+        else if(consultantType)
+        model.addAttribute("title", "Consultants within 6 miles of Zip Code: " + zipCode);
         model.addAttribute("consultants", consultants);
         return "index";
     }

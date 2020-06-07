@@ -20,8 +20,9 @@
         <div>
             <div class="navbar">
                 <ul class="navbar-nav mr-auto">
+                    <li><a th:href="@{index}">Home</a></li>
                     <li><a th:href="@{/search}">Search</a></li>
-                    <li><a th:href="@{/list}">List</a></li>
+<!--                    <li><a th:href="@{/list}">List</a></li>-->
                 </ul>
             </div>
         </div>
@@ -32,7 +33,7 @@
         <form th:action="@{/search}" method = "post" th:object="${searchForm}">
             <h2>Search by:</h2>
             <div class="form-holder">
-                <div>
+                <div class="">
                     <input type="radio"
                            name="consultantType"
                            id="consultantType"
@@ -52,25 +53,22 @@
                            value="anyType"/>
                     <label for="anyType">Any</label>
                 </div>
-                <div>
+                <div class="">
                     <input type="checkbox"
                            name="salonOnly"
-                           id="salonOnly"
-                           th:field="*{salonOnly}"/>
+                           id="salonOnly"/>
                     <label for="salonOnly">Salon Only</label>
             <br>
                     <!--TODO: adding th:field here makes value true and checked-->
-                    <label for="zipCode">Zip Code:</label>
                     <input type="text"
                            name="zipCode"
                            id="zipCode"
                            maxlength="5"
-                           size="8"
-                           th:field="*{zipCode}"/>
-            <br>
-                    <label for="radius">Radius: </label>
-                    <select id = "radius"
-                            th:field="*{radius}">
+                           size="8"/>
+                    <label for="zipCode">Zip Code:</label>
+
+                    <br>
+                    <select id = "radius">
                         <option value = "5">5 miles</option>
                         <option value = "10">10 miles</option>
                         <option value = "20">20 miles</option>
@@ -78,7 +76,10 @@
                         <option value = "100">100 miles</option>
                         <option value = "any">Any distance</option>
                     </select>
+                    <label for="radius">Radius: </label>
+
                 </div>
+                <div></div>
                 <div>
                     <input type="submit" value="Search" />
                 </div>
@@ -122,12 +123,12 @@
                 <td th:text="${person.city}"></td>
                 <td th:text="${person.state}"></td>
                 <td th:text="${person.zipCode}"></td>
-                <td><button type="button" href="#" class="accordion-toggle" data-toggle="collapse" data-target="#accordion_'+${person.name}">Details</button></td>
+                <td><button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#accordion_'+${person.name}">Details</button></td>
             </tr>
             <tr>
                 <td class="hiddenRow"
-                    colspan="5"> <!---->
-                    <div class="accordion-body collapse"
+                    colspan="5">
+                    <div class="collapse"
                          th:id="'#accordion_'+${person.name}"
                          th:utext=" 'Name: ' + ${person.name} + '<br>' +
                                     'Phone Number: ' + ${person.phoneNumber} + '<br>'+
@@ -143,11 +144,11 @@
             </tr>
         </th:block>
         <tfoot>
-        <th>Name</th>
-        <th>City</th>
-        <th>State</th>
-        <th>Zip</th>
-        <th></th>
+            <th>Name</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th></th>
         </tfoot>
 
 

@@ -4,12 +4,14 @@ table, th, tr, td {
 }
 
 .my-form {
-    /*padding: 60px 0 40px 0;*/
+    padding: 0 0 1% 0;
 }
 
 .form-holder {
-    grid-template-columns: auto auto;
+    display: grid;
+    grid-template-columns: 15% 15% auto;
     grid-column-gap: 1%;
+    grid-row-gap: 4%;
 }
 
 .consultants-table-index {
@@ -18,7 +20,7 @@ table, th, tr, td {
 }
 
 .left-side {
-
+    border: 2px black solid;
 }
 
 .navbar ul li {
@@ -45,13 +47,13 @@ table, th, tr, td {
 }
 
 .google-box {
-    padding: 0 60px 60px 60px;
+    padding: 0 0 60px 60px;
     border: 2px black solid;
     height: 100%;
     width: 100%;
 }
 
-.hiddenRow, #accordion{
+.hiddenRow{
   display: none;
   overflow: hidden;
 
