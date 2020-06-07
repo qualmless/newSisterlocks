@@ -125,8 +125,11 @@
                 <td><button type="button" href="#" class="accordion-toggle" data-toggle="collapse" data-target="#accordion_'+${person.name}">Details</button></td>
             </tr>
             <tr>
-                <td colspan="5"> <!--class="hiddenRow"-->
-                    <div th:utext=" 'Name: ' + ${person.name} + '<br>' +
+                <td class="hiddenRow"
+                    colspan="5"> <!---->
+                    <div class="accordion-body collapse"
+                         th:id="'#accordion_'+${person.name}"
+                         th:utext=" 'Name: ' + ${person.name} + '<br>' +
                                     'Phone Number: ' + ${person.phoneNumber} + '<br>'+
                                     'Email: ' + ${person.email} + '<br>'+
                                     'Address: ' + ${person.address} + '<br>'+
@@ -134,7 +137,7 @@
                                     'Consultant Level: ' + ${person.consultantLevel} + '<br>' +
                                     'Salon or Home: ' + ${person.salonOrHome} + '<br>'+
                                     'Salon Name (if applicable): ' + ${person.salonName} + '<br>'">
-                        <!--class="accordion-body collapse" th:id="'#accordion_'+${person.name}"-->
+
                     </div>
                 </td>
             </tr>
