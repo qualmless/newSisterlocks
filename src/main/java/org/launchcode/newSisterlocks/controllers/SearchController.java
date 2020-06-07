@@ -32,7 +32,7 @@ public class SearchController {
 
     @PostMapping(value = "search")
     public String displaySearchResults(Model model,
-                                       String consultantType,
+                                       ConsultantType consultantLevel,
                                        Boolean salonOnly,
                                        String zipCode,
                                        String radius/*,
@@ -47,7 +47,7 @@ public class SearchController {
             model.addAttribute("title", "All Consultants");
         }
 
-        else if(consultantType)
+        else if(consultantLevel)
         model.addAttribute("title", "Consultants within 6 miles of Zip Code: " + zipCode);
         model.addAttribute("consultants", consultants);
         return "index";
