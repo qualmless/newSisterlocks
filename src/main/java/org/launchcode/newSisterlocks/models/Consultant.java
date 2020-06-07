@@ -16,7 +16,7 @@ public class Consultant {
     private String email;
     private String salonOrHome;
     private String salonName;
-    private String consultantLevel;
+    private ConsultantType consultantLevel;
 
 
     // Initialize a unique ID.
@@ -35,7 +35,7 @@ public class Consultant {
                       String email,
                       String salonOrHome,
                       String salonName,
-                      String consultantLevel) {
+                      ConsultantType consultantLevel) {
         this.name=name;
         this.address=address;
         this.city=city;
@@ -47,6 +47,8 @@ public class Consultant {
         this.salonName=salonName;
         this.consultantLevel=consultantLevel;
     }
+
+
 
 
     //equals and hashcode
@@ -140,11 +142,11 @@ public class Consultant {
         this.salonName = salonName;
     }
 
-    public String getConsultantLevel() {
+    public ConsultantType getConsultantLevel() {
         return consultantLevel;
     }
 
-    public void setConsultantLevel(String consultantLevel) {
+    public void setConsultantLevel(ConsultantType consultantLevel) {
         this.consultantLevel = consultantLevel;
     }
 }
