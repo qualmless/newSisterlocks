@@ -1,5 +1,7 @@
 package org.launchcode.newSisterlocks.models;
 
+import java.util.Objects;
+
 public class SearchForm {
 
 //    private String salonOrHome;
@@ -40,4 +42,33 @@ public class SearchForm {
     public void setRadius(String radius) {
         this.radius = radius;
     }
+
+
+
+//    @Override
+//    public String toString() {
+//        return "SearchForm{" +
+//                "salonOnly=" + salonOnly +
+//                ", consultantLevel='" + consultantLevel + '\'' +
+//                ", zipCode='" + zipCode + '\'' +
+//                ", radius='" + radius + '\'' +
+//                '}';
+//    }
+
+    //
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        SearchForm that = (SearchForm) o;
+//        return Objects.equals(salonOnly, that.salonOnly) &&
+//                Objects.equals(consultantLevel, that.consultantLevel) &&
+//                Objects.equals(zipCode, that.zipCode) &&
+//                Objects.equals(radius, that.radius);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(salonOnly, consultantLevel, zipCode, radius);
+//    }
 }

@@ -36,18 +36,19 @@ table, th, tr, td {
     grid-column-gap: 3%;
 }
 
+.consultant-and-google h2 {
+    color: deeppink;
+}
+
 .body-content {
     padding: 0 2% 2% 2%;
 }
 
 .google-box {
     padding: 0 60px 60px 60px;
-    background: blue;
-    border: 2px solid;
+    border: 2px black solid;
     height: 100%;
     width: 100%;
-    color: white;
-
 }
 
 .hiddenRow, #accordion{
