@@ -53,7 +53,6 @@ public class ConsultantData {
 
         // load data, if not already loaded
 
-        //TODO: bring all the value stuff back
         loadData();
 
         ArrayList<Consultant> consultants = new ArrayList<>();
@@ -189,10 +188,10 @@ public class ConsultantData {
                     allCities.add(newCity);
                 }
 
-                if (newState == null){
-                    newState = new State(aState);
-                    allStates.add(newState);
-                }
+//                if (newState == null){
+//                    newState = new State(aState);
+//                    allStates.add(newState);
+//                }
 
                 if (newZipCode == null){
                     newZipCode = new ZipCode(aZipCode);

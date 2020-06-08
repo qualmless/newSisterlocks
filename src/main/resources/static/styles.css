@@ -47,7 +47,7 @@ input[type=text] {
 }
 
 select {
-  width: 70%;
+  width: 50%;
   height: 30px;
   font-size: 100%;
   font-weight: bold;

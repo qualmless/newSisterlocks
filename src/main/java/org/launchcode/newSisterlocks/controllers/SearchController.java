@@ -26,39 +26,67 @@ public class SearchController {
     }
 
 
-// TODO: add google api
 
 // TODO: make search respond to actual data
 
     @PostMapping(value = "search")
     public String displaySearchResults(Model model,
 //                                       Consultant consultants,
-                                       String consultantLevel,
-                                       Boolean salonOnly,
-                                       String zipCode,
-                                       String radius/*,
+                                       @RequestParam String consultantLevel,
+                                       @RequestParam Boolean salonOnly,
+                                       @RequestParam String city/*,
                                        //i think this should be radius but i don't know how
                                        @RequestParam String searchType*/){
         model.addAttribute("columns", columnChoices);
         model.addAttribute("tableChoices", tableChoices);
-        ArrayList<Consultant> consultants;
+        ArrayList<Consultant> consultants = new ArrayList<>();
 
-        if (zipCode.equals("")) {
+        if (city.toLowerCase().equals(columnChoices.get(city))) {
+            consultants = ConsultantData.findByColumnAndValue(columnChoices.get(city), city);
+            model.addAttribute("title", "Consultants in " +columnChoices.get(city));
+        }
+        else if (salonOnly){
+            consultants = ConsultantData.findByColumnAndValue(salonOnly.toString().toLowerCase(), "true");
+            model.addAttribute("title", "Consultants in Salon Only");
+        }
+        else if (consultantLevel.equals(columnChoices.get(consultantLevel))){
+            consultants=ConsultantData.findByColumnAndValue(consultantLevel,consultantLevel);
+            model.addAttribute("title",columnChoices.get(consultantLevel)+" Level Consultants");
+        }
+//        else if  {
+//
+//        }
+        else {
             consultants=ConsultantData.findAll();
             model.addAttribute("title", "All Consultants");
         }
-        else if (salonOnly){
-            consultants = ConsultantData.findByColumnAndValue(zipCode, zipCode);
-        }
+
 //        else {
 //            if(consultantLevel.toLowerCase().equals(ConsultantType.values() ) ) {
 //                consultants=ConsultantData.findByValue(ConsultantType.values().toString());
 //                model.addAttribute("title",consultantLevel +"Level Stylists");
 //            }
 //        }
-//        model.addAttribute("title", "Consultants within 6 miles of Zip Code: " + zipCode);
-//        model.addAttribute("consultants", consultants);
-        return "index";
+
+        model.addAttribute("consultants", consultants);
+        return "search";
+    }
+
+    @RequestMapping(value = "results")
+    public String listConsultantsByColumnAndValue(Model model,
+                                                  @RequestParam String column,
+                                                  @RequestParam String value) {
+        ArrayList<Consultant> consultants;
+        if (column.toLowerCase().equals("all")){
+            consultants = ConsultantData.findAll();
+            model.addAttribute("title", "All Jobs");
+        } else {
+            consultants = ConsultantData.findByColumnAndValue(column, value);
+            model.addAttribute("title", "Jobs with " + columnChoices.get(column) + ": " + value);
+        }
+        model.addAttribute("jobs", consultants);
+
+        return "search";
     }
 
 

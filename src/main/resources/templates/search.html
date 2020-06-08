@@ -10,6 +10,7 @@
     <div th:replace="fragments :: search-form"></div>
     <div class="consultant-and-google">
         <div class="left-side">
+                <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
                 <h2>Consultants results</h2>
                 <p>(click details to expand)</p>
 
@@ -18,7 +19,7 @@
         </div>
 
         <div class="google-box">
-                <h2>future google square</h2>
+                <h2>future location square</h2>
         </div>
         <!--TODO: make details alive when clicked. javascript?-->
 
