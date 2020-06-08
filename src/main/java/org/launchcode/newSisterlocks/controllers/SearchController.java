@@ -47,15 +47,15 @@ public class SearchController {
             consultants=ConsultantData.findAll();
             model.addAttribute("title", "All Consultants");
         }
-//        else if (zipCode.equals(12345)){
-//            consultants = ConsultantData.findByColumnAndValue(zipCode, zipCode);
-//        }
-        else {
-            if(consultantLevel.toLowerCase().equals(ConsultantType.values() ) ) {
-                consultants=ConsultantData.findByValue(ConsultantType.values().toString());
-                model.addAttribute("title",consultantLevel +"Level Stylists");
-            }
+        else if (salonOnly){
+            consultants = ConsultantData.findByColumnAndValue(zipCode, zipCode);
         }
+//        else {
+//            if(consultantLevel.toLowerCase().equals(ConsultantType.values() ) ) {
+//                consultants=ConsultantData.findByValue(ConsultantType.values().toString());
+//                model.addAttribute("title",consultantLevel +"Level Stylists");
+//            }
+//        }
 //        model.addAttribute("title", "Consultants within 6 miles of Zip Code: " + zipCode);
 //        model.addAttribute("consultants", consultants);
         return "index";

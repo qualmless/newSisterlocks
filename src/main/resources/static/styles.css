@@ -1,10 +1,25 @@
-table, th, tr, td {
-    border:5px solid;
-    padding: 10px;
+/*------------NAVBAR------------------------------------------------------------------------------------------->*/
+
+.navbar{
+    margin-bottom: 0;
 }
 
+.navbar-dark{
+    background-color: #086375;
+}
+
+.navbar a {
+    color: #E8EAE8;
+}
+
+.navbar ul li {
+    padding: 5px;
+}
+
+/*------------FORM------------------------------------------------------------------------------------------------>*/
 .my-form {
     padding: 0 0 1% 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .form-holder {
@@ -14,6 +29,48 @@ table, th, tr, td {
     grid-row-gap: 4%;
 }
 
+.form-holder ul {
+    list-style-type: none;
+    padding: 1% 0;
+
+}
+
+.form-holder ul li {
+    padding: 2% 0;
+}
+
+input[type=text] {
+  border: none;
+  border-bottom: 2px solid #DF3143;
+  background-color: #E1F4F4;
+  padding: 2px;
+}
+
+select {
+  width: 70%;
+  height: 30px;
+  font-size: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0;
+  background-color: #DF3143;
+  border: none;
+  border-bottom: 2px solid #962d22;
+  color: #E1F4F4;
+  padding: 5px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 3px;
+}
+
+
+
+/*------------BODY------------------------------------------------------------------------------------------------>*/
+body {
+    background-color: #E1F4F4;
+    font-family: 'Roboto Slab', serif;
+}
 .consultants-table-index {
     margin-right: 5%;
     width: 100%;
@@ -21,10 +78,6 @@ table, th, tr, td {
 
 .left-side {
     border: 2px black solid;
-}
-
-.navbar ul li {
-    padding: 5px;
 }
 
 .consultant-details {
@@ -38,19 +91,43 @@ table, th, tr, td {
     grid-column-gap: 3%;
 }
 
-.consultant-and-google h2 {
-    color: deeppink;
+h2 {
+    color: #086375;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
 }
+
+
 
 .body-content {
     padding: 0 2% 2% 2%;
 }
 
 .google-box {
-    padding: 0 0 60px 60px;
+    padding: 0 0 60px 0;
     border: 2px black solid;
     height: 100%;
     width: 100%;
+}
+
+.btn-primary {
+    background-color: #F18F01;
+    border-color: #E5502D;
+}
+.btn-primary:hover{
+    background-color: #D81159;
+    border-color: #E5502D;
+}
+
+
+/*------------TABLE------------------------------------------------------------------------------------------------>*/
+table, th, tr, td {
+    border:5px solid;
+    padding: 10px;
+}
+
+thead, tfoot {
+    background-color: #3DCCC7;
 }
 
 .hiddenRow{
@@ -78,3 +155,4 @@ table.dataTable thead .sorting_desc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:before {
 bottom: .5em;
 }
+/*------------------------------------------------------------------------------------------------------------>*/

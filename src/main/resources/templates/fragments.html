@@ -11,12 +11,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="scripts.js"></script>
     <link th:href="@{styles.css}" rel="stylesheet" />
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Roboto+Slab&display=swap" rel="stylesheet"></head>
 
 <body>
 
 <!--header/navbar--------------------------------------------------------------------------------------------->
-    <div th:fragment="page-header" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div th:fragment="page-header" class="navbar navbar-expand-md navbar-dark fixed-top">
         <div>
             <div class="navbar">
                 <ul class="navbar-nav mr-auto">
@@ -34,54 +34,63 @@
             <h2>Search by:</h2>
             <div class="form-holder">
                 <div class="">
-                    <input type="radio"
-                           name="consultantType"
-                           id="consultantType"
-                           value="consultantType"/>
-                    <label for="consultantType">Consultant Only</label>
-            <br>
-                    <input type="radio"
-                           name="consultantType"
-                           id="traineeType"
-                           value="traineeType"/>
-                    <label for="traineeType">Trainee Only</label>
-            <br>
+                    <ul>
+                        <li>
+                        <input type="radio"
+                               name="consultantType"
+                               id="consultantType"
+                               value="consultantType"/>
+                        <label for="consultantType">Consultant Only</label>
+                        </li>
+                        <li>
+                        <input type="radio"
+                               name="consultantType"
+                               id="traineeType"
+                               value="traineeType"/>
+                        <label for="traineeType">Trainee Only</label>
+                        </li>
+                        <li>
+                        <input type="radio"
+                               name="consultantType"
+                               id="anyType"
+                               value="anyType"/>
+                        <label for="anyType">Any</label>
+                        </li>
+                    </ul>
 
-                    <input type="radio"
-                           name="consultantType"
-                           id="anyType"
-                           value="anyType"/>
-                    <label for="anyType">Any</label>
                 </div>
                 <div class="">
-                    <input type="checkbox"
-                           name="salonOnly"
-                           id="salonOnly"/>
-                    <label for="salonOnly">Salon Only</label>
-            <br>
-                    <!--TODO: adding th:field here makes value true and checked-->
-                    <input type="text"
-                           name="zipCode"
-                           id="zipCode"
-                           maxlength="5"
-                           size="8"/>
-                    <label for="zipCode">Zip Code:</label>
-
-                    <br>
-                    <select id = "radius">
-                        <option value = "5">5 miles</option>
-                        <option value = "10">10 miles</option>
-                        <option value = "20">20 miles</option>
-                        <option value = "50">50 miles</option>
-                        <option value = "100">100 miles</option>
-                        <option value = "any">Any distance</option>
-                    </select>
-                    <label for="radius">Radius: </label>
-
+                    <ul>
+                        <li>
+                            <input type="checkbox"
+                                   name="salonOnly"
+                                   id="salonOnly"/>
+                            <label for="salonOnly">Salon Only</label>
+                        </li>                    <!--TODO: adding th:field here makes value true and checked-->
+                        <li>
+                            <input type="text"
+                               name="zipCode"
+                               id="zipCode"
+                               maxlength="5"
+                               size="8"/>
+                            <label for="zipCode">Zip Code:</label>
+                        </li>
+                        <li>
+                            <select id = "radius">
+                                <option value = "5">5 miles</option>
+                                <option value = "10">10 miles</option>
+                                <option value = "20">20 miles</option>
+                                <option value = "50">50 miles</option>
+                                <option value = "100">100 miles</option>
+                                <option value = "any">Any distance</option>
+                            </select>
+                            <label for="radius">Radius: </label>
+                        </li>
+                    </ul>
                 </div>
                 <div></div>
                 <div>
-                    <input type="submit" value="Search" />
+                    <input type="submit button" class="btn btn-primary" value="Search" />
                 </div>
             </div>
 
