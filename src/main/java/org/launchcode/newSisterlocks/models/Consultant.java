@@ -16,7 +16,7 @@ public class Consultant {
     private String email;
     private String salonOrHome;
     private String salonName;
-    private ConsultantType consultantLevel;
+    private String consultantLevel;
 
 
     // Initialize a unique ID.
@@ -35,7 +35,7 @@ public class Consultant {
                       String email,
                       String salonOrHome,
                       String salonName,
-                      ConsultantType consultantLevel) {
+                      String consultantLevel) {
         this.name=name;
         this.address=address;
         this.city=city;
@@ -142,11 +142,11 @@ public class Consultant {
         this.salonName = salonName;
     }
 
-    public ConsultantType getConsultantLevel() {
+    public String getConsultantLevel() {
         return consultantLevel;
     }
 
-    public void setConsultantLevel(ConsultantType consultantLevel) {
+    public void setConsultantLevel(String consultantLevel) {
         this.consultantLevel = consultantLevel;
     }
 }

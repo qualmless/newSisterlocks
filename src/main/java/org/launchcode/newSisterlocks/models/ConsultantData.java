@@ -62,17 +62,17 @@ public class ConsultantData {
             return findAll();
         }
 
-//        if (column.equals("all")){
-//            consultants = findByValue(value);
-//            return consultants;
-//        }
+        if (column.equals("all")){
+            consultants = findByValue(value);
+            return consultants;
+        }
         for (Consultant consultant : allConsultants) {
 
             String aValue = getFieldValue(consultant, column);
 
-//            if (aValue != null && aValue.toLowerCase().contains(value.toLowerCase())) {
-//                consultants.add(consultant);
-//            }
+            if (aValue != null && aValue.contains(value)) {
+                consultants.add(consultant);
+            }
         }
 
         return consultants;

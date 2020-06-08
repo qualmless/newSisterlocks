@@ -6,7 +6,7 @@ public class SearchForm {
 
 //    private String salonOrHome;
     private Boolean salonOnly;
-    private String consultantLevel;
+    private ConsultantType consultantLevel;
     private String zipCode;
     private String radius;
 
@@ -19,11 +19,11 @@ public class SearchForm {
         this.salonOnly = salonOnly;
     }
 
-    public String getConsultantLevel() {
+    public ConsultantType getConsultantLevel() {
         return consultantLevel;
     }
 
-    public void setConsultantLevel(String consultantLevel) {
+    public void setConsultantLevel(ConsultantType consultantLevel) {
         this.consultantLevel = consultantLevel;
     }
 

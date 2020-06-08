@@ -21,7 +21,7 @@ public class SearchController {
     public String search(Model model) {
         model.addAttribute("columns", columnChoices);
         model.addAttribute("tableChoices", tableChoices);
-        model.addAttribute(new SearchForm());
+        model.addAttribute("consultantLevel", ConsultantType.values());
         return "search";
     }
 
@@ -32,7 +32,8 @@ public class SearchController {
 
     @PostMapping(value = "search")
     public String displaySearchResults(Model model,
-                                       ConsultantType consultantLevel,
+//                                       Consultant consultants,
+                                       String consultantLevel,
                                        Boolean salonOnly,
                                        String zipCode,
                                        String radius/*,
@@ -46,10 +47,17 @@ public class SearchController {
             consultants=ConsultantData.findAll();
             model.addAttribute("title", "All Consultants");
         }
-
-        else if(consultantLevel)
-        model.addAttribute("title", "Consultants within 6 miles of Zip Code: " + zipCode);
-        model.addAttribute("consultants", consultants);
+//        else if (zipCode.equals(12345)){
+//            consultants = ConsultantData.findByColumnAndValue(zipCode, zipCode);
+//        }
+        else {
+            if(consultantLevel.toLowerCase().equals(ConsultantType.values() ) ) {
+                consultants=ConsultantData.findByValue(ConsultantType.values().toString());
+                model.addAttribute("title",consultantLevel +"Level Stylists");
+            }
+        }
+//        model.addAttribute("title", "Consultants within 6 miles of Zip Code: " + zipCode);
+//        model.addAttribute("consultants", consultants);
         return "index";
     }
 
