@@ -21,6 +21,12 @@ public class SearchController {
     public String search(Model model) {
         model.addAttribute("columns", columnChoices);
         model.addAttribute("tableChoices", tableChoices);
+        model.addAttribute("all",ConsultantData.findAll());
+        model.addAttribute("consultants", ConsultantData.getAllConsultants());
+        model.addAttribute("names", ConsultantData.getAllNames());
+        model.addAttribute("cities", ConsultantData.getAllCities());
+        model.addAttribute("states", ConsultantData.getAllStates());
+        model.addAttribute("zipCodes", ConsultantData.getAllZipCodes());
         model.addAttribute("consultantLevel", ConsultantType.values());
         return "search";
     }

@@ -155,21 +155,6 @@
             <th></th>
         </thead>
 
-<!--        <tr th:each="person : ${tableChoices.consultants}" >-->
-<!--            <td th:each="item : ${person.name}">-->
-<!--                <a th:text="${person.name}"></a>-->
-<!--            </td>-->
-<!--            <td th:text="${person.city}"></td>-->
-<!--            <td th:text="${person.state}"></td>-->
-<!--            <td th:text="${person.zipCode}"></td>-->
-<!--            <td><button type="button" class="collapsible" data-toggle="collapse" data-target=".collapse-row">Details</button></td>-->
-
-<!--        </tr>-->
-<!--        <tr class="collapse-row collapse">-->
-<!--            <td>-->
-<!--                some more info-->
-<!--            </td>-->
-<!--        </tr>-->
 
         <th:block th:each="person: ${tableChoices.consultants}">
             <tr th:attr="data-target='#accordion_'+${person.name}" data-toggle="collapse" class="accordion-toggle">
@@ -204,6 +189,22 @@
             <th>Zip</th>
             <th></th>
         </tfoot>
+
+        <!--        <tr th:each="person : ${tableChoices.consultants}" >-->
+        <!--            <td th:each="item : ${person.name}">-->
+        <!--                <a th:text="${person.name}"></a>-->
+        <!--            </td>-->
+        <!--            <td th:text="${person.city}"></td>-->
+        <!--            <td th:text="${person.state}"></td>-->
+        <!--            <td th:text="${person.zipCode}"></td>-->
+        <!--            <td><button type="button" class="collapsible" data-toggle="collapse" data-target=".collapse-row">Details</button></td>-->
+
+        <!--        </tr>-->
+        <!--        <tr class="collapse-row collapse">-->
+        <!--            <td>-->
+        <!--                some more info-->
+        <!--            </td>-->
+        <!--        </tr>-->
 
 
 <!--        <th:block th:each="result: ${results}">-->
