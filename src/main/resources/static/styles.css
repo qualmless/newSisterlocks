@@ -22,21 +22,21 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.form-holder {
+/*.form-holder {
     display: grid;
     grid-template-columns: 15% 15% auto;
     grid-column-gap: 1%;
     grid-row-gap: 4%;
-}
+}*/
 
 .form-holder ul {
     list-style-type: none;
     padding: 1% 0;
-
 }
 
 .form-holder ul li {
-    padding: 2% 0;
+    display: inline;
+    padding: 0 40px 0 0;
 }
 
 input[type=text] {
@@ -47,7 +47,6 @@ input[type=text] {
 }
 
 select {
-  width: 50%;
   height: 30px;
   font-size: 100%;
   font-weight: bold;

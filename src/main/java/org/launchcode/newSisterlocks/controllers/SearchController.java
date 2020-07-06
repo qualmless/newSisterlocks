@@ -17,39 +17,38 @@ import java.util.ArrayList;
 @RequestMapping("search")
 public class SearchController {
 
-    @RequestMapping(value = "")
-    public String search(Model model) {
-        model.addAttribute("columns", columnChoices);
-        model.addAttribute("tableChoices", tableChoices);
-        model.addAttribute("all",ConsultantData.findAll());
-        model.addAttribute("consultants", ConsultantData.getAllConsultants());
-        model.addAttribute("names", ConsultantData.getAllNames());
-        model.addAttribute("cities", ConsultantData.getAllCities());
-        model.addAttribute("states", ConsultantData.getAllStates());
-        model.addAttribute("zipCodes", ConsultantData.getAllZipCodes());
-        model.addAttribute("consultantLevel", ConsultantType.values());
-        return "search";
-    }
+//    @RequestMapping(value = "")
+//    public String search(Model model) {
+//        model.addAttribute("columns", columnChoices);
+//        model.addAttribute("tableChoices", tableChoices);
+//        model.addAttribute("all",ConsultantData.findAll());
+//        model.addAttribute("consultants", ConsultantData.getAllConsultants());
+//        model.addAttribute("names", ConsultantData.getAllNames());
+//        model.addAttribute("cities", ConsultantData.getAllCities());
+//        model.addAttribute("states", ConsultantData.getAllStates());
+//        model.addAttribute("zipCodes", ConsultantData.getAllZipCodes());
+//        model.addAttribute("consultantLevel", ConsultantType.values());
+//        return "search";
+//    }
 
 
 
 // TODO: make search respond to actual data
 
-    @PostMapping(value = "search")
+    @PostMapping(value = "")
     public String displaySearchResults(Model model,
 //                                       Consultant consultants,
-                                       @RequestParam String consultantLevel,
-                                       @RequestParam Boolean salonOnly,
-                                       @RequestParam String city/*,
+                                       @RequestParam (required = false, name="consultantType", defaultValue = "anyType") String consultantLevel,
+                                       @RequestParam (required = false, defaultValue = "false") Boolean salonOnly,
+                                       @RequestParam (required = false) String city/*,
                                        //i think this should be radius but i don't know how
                                        @RequestParam String searchType*/){
-        model.addAttribute("columns", columnChoices);
-        model.addAttribute("tableChoices", tableChoices);
+//        model.addAttribute("columns", columnChoices);
         ArrayList<Consultant> consultants = new ArrayList<>();
 
         if (city.toLowerCase().equals(columnChoices.get(city))) {
             consultants = ConsultantData.findByColumnAndValue(columnChoices.get(city), city);
-            model.addAttribute("title", "Consultants in " +columnChoices.get(city));
+            model.addAttribute("title", "Consultants in " + columnChoices.get(city));
         }
         else if (salonOnly){
             consultants = ConsultantData.findByColumnAndValue(salonOnly.toString().toLowerCase(), "true");
@@ -60,10 +59,13 @@ public class SearchController {
             model.addAttribute("title",columnChoices.get(consultantLevel)+" Level Consultants");
         }
 //        else if  {
+//            consultants = ConsultantData.findByColumnAndValue(city, city);
 //
 //        }
         else {
+//            consultants = ConsultantData.findByColumnAndValue(consultantLevel, consultantLevel);
             consultants=ConsultantData.findAll();
+            model.addAttribute("tableChoices", tableChoices);
             model.addAttribute("title", "All Consultants");
         }
 
