@@ -40,9 +40,8 @@ public class SearchController {
 //                                       Consultant consultants,
                                        @RequestParam (required = false, name="consultantType", defaultValue = "anyType") String consultantLevel,
                                        @RequestParam (required = false, defaultValue = "false") Boolean salonOnly,
-                                       @RequestParam (required = false) String city/*,
-                                       //i think this should be radius but i don't know how
-                                       @RequestParam String searchType*/){
+                                       @RequestParam (required = false) String city,
+                                       @RequestParam (required = false) String state){
 //        model.addAttribute("columns", columnChoices);
         ArrayList<Consultant> consultants = new ArrayList<>();
 
@@ -56,7 +55,12 @@ public class SearchController {
         }
         else if (consultantLevel.equals(columnChoices.get(consultantLevel))){
             consultants=ConsultantData.findByColumnAndValue(consultantLevel,consultantLevel);
-            model.addAttribute("title",columnChoices.get(consultantLevel)+" Level Consultants");
+            model.addAttribute("title","Consultants with " + columnChoices.get(consultantLevel)+" Level");
+        }
+
+        else if (state.equals(columnChoices.get(state))){
+            consultants=ConsultantData.findByColumnAndValue(state,state);
+            model.addAttribute("title","Consultants in " + columnChoices.get(state));
         }
 //        else if  {
 //            consultants = ConsultantData.findByColumnAndValue(city, city);
@@ -80,22 +84,22 @@ public class SearchController {
         return "search";
     }
 
-    @RequestMapping(value = "results")
-    public String listConsultantsByColumnAndValue(Model model,
-                                                  @RequestParam String column,
-                                                  @RequestParam String value) {
-        ArrayList<Consultant> consultants;
-        if (column.toLowerCase().equals("all")){
-            consultants = ConsultantData.findAll();
-            model.addAttribute("title", "All Jobs");
-        } else {
-            consultants = ConsultantData.findByColumnAndValue(column, value);
-            model.addAttribute("title", "Jobs with " + columnChoices.get(column) + ": " + value);
-        }
-        model.addAttribute("jobs", consultants);
-
-        return "search";
-    }
+//    @RequestMapping(value = "results")
+//    public String listConsultantsByColumnAndValue(Model model,
+//                                                  @RequestParam String column,
+//                                                  @RequestParam String value) {
+//        ArrayList<Consultant> consultants;
+//        if (column.toLowerCase().equals("all")){
+//            consultants = ConsultantData.findAll();
+//            model.addAttribute("title", "All Jobs");
+//        } else {
+//            consultants = ConsultantData.findByColumnAndValue(column, value);
+//            model.addAttribute("title", "Jobs with " + columnChoices.get(column) + ": " + value);
+//        }
+//        model.addAttribute("jobs", consultants);
+//
+//        return "search";
+//    }
 
 
 }
