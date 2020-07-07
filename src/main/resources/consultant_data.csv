@@ -6,9 +6,9 @@ name,address,city,state,zipCode,phoneNumber,email,salonOnly,salonName,consultant
 "Andrea Campbell","","Kansas City","KS","","2107802278","andwal_91@yahoo.com","true","","Trainee"
 "​Tina O'Reilly","","Kansas City","KS","","9136206051","tjade21@aol.com","false","","Trainee"
 "Crystal Williams","","St. Louis","MO","","3149413307","cgarlington.williams@gmail.com","true","N/A","Approved"
-Alison Byrd,,Auburn,AL,,3345240292,alisonbyrd97@gmail.com,,,
-Vickese L House,,Birmingham,AL,,205-503-3345,kesy@att.net,,,"""R""  Certified"
-Vickie Brown House,,Birmingham,AL,,205-516-4242,vlynn0916@att.net,,,
+Alison Byrd,,Auburn,AL,,3345240292,alisonbyrd97@gmail.com,true,,
+Vickese L House,,Birmingham,AL,,205-503-3345,kesy@att.net,false,,"""R""  Certified"
+Vickie Brown House,,Birmingham,AL,,205-516-4242,vlynn0916@att.net,true,,
 Kenyada Ellis ,,Chelsea,AL,,(205) 587-0038,EssentialLocsBham@Hotmail.com,,,BRAND AMBASSADOR
 Kia Relph,,Huntsville,AL,,256-541-7408,kiarelph2000@gmail.com,,,
 Vicki Riggins,,Huntsville,AL,,256-337-1857,rigginsvc@aol.com,,,
