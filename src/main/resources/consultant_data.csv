@@ -1,11 +1,11 @@
-name,address,city,state,zipCode,phoneNumber,email,salonOrHome,salonName,consultantLevel
-"Verneé Cheeks","24024 Holmes rd","Kansas City","MO","64203","81669430450","verneecheeks@gmail.com","home","N/A","Consultant"
-"LaShaun Gleese","641 E 59th St","Kansas City","MO","64110","8164444048","Shaun@yournaturalimage.com","salon","Your Natural Image Salon","Consultant"
-"Tamara Nimrod","","Kansas City","","","8166729621","naturalserenit@gmail.com","home","N/A","Consultant"
-"Deidra Price","323 E Gregory Blvd","Kansas City","MO","64114","9137449798","lavishlocks913@gmail.com","salon","Naturally Unique Salon","Consultant"
-"Andrea Campbell","","Kansas City","KS","","2107802278","andwal_91@yahoo.com","","","Trainee"
-"​Tina O'Reilly","","Kansas City","KS","","9136206051","tjade21@aol.com","","","Trainee"
-"Crystal Williams","","St. Louis","MO","","3149413307","cgarlington.williams@gmail.com","","N/A","Approved"
+name,address,city,state,zipCode,phoneNumber,email,salonOnly,salonName,consultantLevel
+"Verneé Cheeks","24024 Holmes rd","Kansas City","MO","64203","81669430450","verneecheeks@gmail.com","false","N/A","Consultant"
+"LaShaun Gleese","641 E 59th St","Kansas City","MO","64110","8164444048","Shaun@yournaturalimage.com","true","Your Natural Image Salon","Consultant"
+"Tamara Nimrod","","Kansas City","","","8166729621","naturalserenit@gmail.com","false","N/A","Consultant"
+"Deidra Price","323 E Gregory Blvd","Kansas City","MO","64114","9137449798","lavishlocks913@gmail.com","true","Naturally Unique Salon","Consultant"
+"Andrea Campbell","","Kansas City","KS","","2107802278","andwal_91@yahoo.com","true","","Trainee"
+"​Tina O'Reilly","","Kansas City","KS","","9136206051","tjade21@aol.com","false","","Trainee"
+"Crystal Williams","","St. Louis","MO","","3149413307","cgarlington.williams@gmail.com","true","N/A","Approved"
 Alison Byrd,,Auburn,AL,,3345240292,alisonbyrd97@gmail.com,,,
 Vickese L House,,Birmingham,AL,,205-503-3345,kesy@att.net,,,"""R""  Certified"
 Vickie Brown House,,Birmingham,AL,,205-516-4242,vlynn0916@att.net,,,

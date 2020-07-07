@@ -45,27 +45,26 @@ public class SearchController {
 //        model.addAttribute("columns", columnChoices);
         ArrayList<Consultant> consultants = new ArrayList<>();
 
-        if (city.toLowerCase().equals(columnChoices.get(city))) {
-            consultants = ConsultantData.findByColumnAndValue(columnChoices.get(city), city);
-            model.addAttribute("title", "Consultants in " + columnChoices.get(city));
-        }
-        else if (salonOnly){
-            consultants = ConsultantData.findByColumnAndValue(salonOnly.toString().toLowerCase(), "true");
+        if (salonOnly){
+//            consultants = ConsultantData.findByColumnAndValue(salonOnly.toString().toLowerCase(), );
+            consultants=ConsultantData.findByColumnAndValue("salonOnly","true");
             model.addAttribute("title", "Consultants in Salon Only");
+            model.addAttribute("tableChoices", tableChoices);
         }
-        else if (consultantLevel.equals(columnChoices.get(consultantLevel))){
-            consultants=ConsultantData.findByColumnAndValue(consultantLevel,consultantLevel);
-            model.addAttribute("title","Consultants with " + columnChoices.get(consultantLevel)+" Level");
-        }
-
-        else if (state.equals(columnChoices.get(state))){
-            consultants=ConsultantData.findByColumnAndValue(state,state);
-            model.addAttribute("title","Consultants in " + columnChoices.get(state));
-        }
-//        else if  {
-//            consultants = ConsultantData.findByColumnAndValue(city, city);
-//
+//        else if (city.toLowerCase().equals(columnChoices.get(city))) {
+//            consultants = ConsultantData.findByColumnAndValue(columnChoices.get(city), city);
+//            model.addAttribute("title", "Consultants in " + columnChoices.get(city));
 //        }
+//        else if (consultantLevel.equals(columnChoices.get(consultantLevel))){
+//            consultants=ConsultantData.findByColumnAndValue(consultantLevel,consultantLevel);
+//            model.addAttribute("title","Consultants with " + columnChoices.get(consultantLevel)+" Level");
+//        }
+//
+//        else if (state.equals(columnChoices.get(state))){
+//            consultants=ConsultantData.findByColumnAndValue(state,state);
+//            model.addAttribute("title","Consultants in " + columnChoices.get(state));
+//        }
+
         else {
 //            consultants = ConsultantData.findByColumnAndValue(consultantLevel, consultantLevel);
             consultants=ConsultantData.findAll();
