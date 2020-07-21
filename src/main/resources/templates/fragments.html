@@ -30,7 +30,7 @@
 
 <!--search form----------------------------------------------------------------------------------------------->
     <div th:fragment="search-form" class="my-form">
-        <form th:action="@{/search}" method = "post" th:object="${searchForm}">
+        <form th:action="@{/search}" method = "post"> <!--th:object="${searchForm}"-->
             <h2>Search by:</h2>
             <div class="form-holder">
             <ul>
@@ -59,6 +59,7 @@
                 <li>
                     <label for="state">State: </label>
                     <select id="state">
+                        <option value="ANY">Any</option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
                         <option value="AZ">Arizona</option>
@@ -154,7 +155,7 @@
                                     'Address: ' + ${person.address} + '<br>'+
                                     ${person.city} + ', ' + ${person.state} + ' ' + ${person.zipCode} + '<br>' +
                                     'Consultant Level: ' + ${person.consultantLevel} + '<br>' +
-                                    'Salon or Home: ' + ${person.salonOrHome} + '<br>'+
+                                    'Salon or Home: ' + ${person.salonOnly} + '<br>'+
                                     'Salon Name (if applicable): ' + ${person.salonName} + '<br>'">
 
                     </div>

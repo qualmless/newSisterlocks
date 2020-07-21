@@ -88,8 +88,8 @@ public class ConsultantData {
             theValue = consultant.getCity().toString();
         } else if (fieldName.equals("state")){
             theValue = consultant.getState().toString();
-        } else if (fieldName.equals("zipCode")){
-            theValue = consultant.getZipCode().toString();
+        } else if (fieldName.equals("salonOnly")){
+            theValue = consultant.getSalonOnly().toString();
         }
 
         return theValue;
@@ -169,7 +169,7 @@ public class ConsultantData {
                 String aZipCode = record.get(4);
                 String aPhoneNumber = record.get(5);
                 String anEmail = record.get(6);
-                String betweenSalonOrHome = record.get(7);
+                String ifSalonOnly = record.get(7);
                 String aSalonName = record.get(8);
                 String aConsultantLevel = record.get(9);
 
@@ -206,7 +206,7 @@ public class ConsultantData {
                         aZipCode,
                         aPhoneNumber,
                         anEmail,
-                        betweenSalonOrHome,
+                        ifSalonOnly,
                         aSalonName,
                         aConsultantLevel);
 

@@ -14,7 +14,7 @@ public class Consultant {
     private String zipCode;
     private String phoneNumber;
     private String email;
-    private String salonOrHome;
+    private String salonOnly;
     private String salonName;
     private String consultantLevel;
 
@@ -33,7 +33,7 @@ public class Consultant {
                       String zipCode,
                       String phoneNumber,
                       String email,
-                      String salonOrHome,
+                      String salonOnly,
                       String salonName,
                       String consultantLevel) {
         this.name=name;
@@ -43,7 +43,7 @@ public class Consultant {
         this.zipCode=zipCode;
         this.phoneNumber=phoneNumber;
         this.email=email;
-        this.salonOrHome=salonOrHome;
+        this.salonOnly=salonOnly;
         this.salonName=salonName;
         this.consultantLevel=consultantLevel;
     }
@@ -126,12 +126,12 @@ public class Consultant {
         this.email = email;
     }
 
-    public String getSalonOrHome() {
-        return salonOrHome;
+    public String getSalonOnly() {
+        return salonOnly;
     }
 
-    public void setSalonOrHome(String salonOrHome) {
-        this.salonOrHome = salonOrHome;
+    public void setSalonOnly(String salonOnly) {
+        this.salonOnly = salonOnly;
     }
 
     public String getSalonName() {

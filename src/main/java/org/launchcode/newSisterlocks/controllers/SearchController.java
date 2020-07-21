@@ -43,14 +43,15 @@ public class SearchController {
                                        @RequestParam (required = false) String city,
                                        @RequestParam (required = false) String state){
 //        model.addAttribute("columns", columnChoices);
-        ArrayList<Consultant> consultants = new ArrayList<>();
+        ArrayList<Consultant> consultants;
 
         if (salonOnly){
-//            consultants = ConsultantData.findByColumnAndValue(salonOnly.toString().toLowerCase(), );
-            consultants=ConsultantData.findByColumnAndValue("salonOnly","true");
-            model.addAttribute("title", "Consultants in Salon Only");
+            consultants = ConsultantData.findByColumnAndValue("salonOnly","true");
+//            consultants=ConsultantData.findByColumnAndValue("salonOnly","true");
+            model.addAttribute("title", "Consultants in Salons Only");
             model.addAttribute("tableChoices", tableChoices);
         }
+
 //        else if (city.toLowerCase().equals(columnChoices.get(city))) {
 //            consultants = ConsultantData.findByColumnAndValue(columnChoices.get(city), city);
 //            model.addAttribute("title", "Consultants in " + columnChoices.get(city));

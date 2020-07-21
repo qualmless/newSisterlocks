@@ -2,6 +2,7 @@ package org.launchcode.newSisterlocks.models;
 
 public enum State {
 
+    ANY("Any"),
     AL("Alabama"),
     AK("Alaska"),
     AZ("Arizona"),
